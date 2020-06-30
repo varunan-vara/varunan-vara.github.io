@@ -1,0 +1,102 @@
+/*@import*/
+
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+header{
+    background-color: #003D2E;
+}
+
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+header h1 {
+    display: inline;
+}
+
+header .title {
+    color: #4E878C;
+    padding: 20px;
+    padding-top: 40px;
+    margin: 0;
+}
+
+.logo {
+  float : left;
+  padding-left: 20px;
+}
+
+nav{
+    float: right;
+    margin-right: 20px;
+    margin-top: 17px;
+}
+
+
+
+nav li {
+    margin: 7px, 8px;
+    display: inline-block;
+    position: relative;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+nav a{
+    color: #65B891;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: #93E5AB;
+}
+
+#now {
+    color: #93E5AB;
+    text-decoration: underline;
+}
+
+/*
+Navigation Animation by StyleShit
+https://codepen.io/EvyatarDa/pen/waKXMd
+*/
+
+
+/* Border X get width  */
+div.borderXwidth a:before, div.borderXwidth a:after
+{
+    position: absolute;
+    opacity: 0;
+    width: 0%;
+    height: 2px;
+    content: '';
+    background: #93E5AB;
+    transition: all 0.3s;
+}
+
+div.borderXwidth a:before
+{
+    left: 0px;
+    top: 0px;
+}
+
+div.borderXwidth a:after
+{
+    right: 0px;
+    bottom: 0px;
+}
+
+div.borderXwidth a:hover:before, div.borderXwidth a:hover:after
+{
+    opacity: 1;
+    width: 100%;
+}

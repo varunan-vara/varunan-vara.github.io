@@ -1,0 +1,11 @@
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+h2 {
+    font-size: 56px;
+    margin: 10px;
+}
+h3 {
+    margin: 15px;
+    line-height: 0.5em;
+}
