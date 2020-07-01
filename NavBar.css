@@ -60,7 +60,7 @@ nav a:hover {
     color: #93E5AB;
 }
 
-#now {
+.now {
     color: #93E5AB;
     text-decoration: underline;
 }
