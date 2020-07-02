@@ -5,7 +5,8 @@ body{
 }
 
 header{
-    background-color: #003D2E;
+    bbackground-image: linear-gradient(to right, #003D2E , #01251c);
+    /*#003D2E, 01251c*/
 }
 
 header::after {
