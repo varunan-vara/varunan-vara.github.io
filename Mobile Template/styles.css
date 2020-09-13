@@ -1,11 +1,152 @@
+/*Colombo Font*/
 @font-face {
     font-family: "Colombo";
     src: url("Assets/Fonts/Colombo Sans/Colombo Sans Font.ttf") format("tff");
 }
-:root{
-    font-family: "Roboto", sans-serif;
+
+/* raleway-regular - latin */
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    src: url('Assets/Fonts/raleway-v17-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('Assets/Fonts/raleway-v17-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Assets/Fonts/raleway-v17-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('Assets/Fonts/raleway-v17-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('Assets/Fonts/raleway-v17-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('Assets/Fonts/raleway-v17-latin-regular.svg#Raleway') format('svg'); /* Legacy iOS */
+  }
+  
+  /* raleway-300 - latin */
+  @font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 300;
+    src: url('Assets/Fonts/raleway-v17-latin-300.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('Assets/Fonts/raleway-v17-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Assets/Fonts/raleway-v17-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+         url('Assets/Fonts/raleway-v17-latin-300.woff') format('woff'), /* Modern Browsers */
+         url('Assets/Fonts/raleway-v17-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('Assets/Fonts/raleway-v17-latin-300.svg#Raleway') format('svg'); /* Legacy iOS */
+  }
+  
+  /* raleway-600 - latin */
+  @font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    src: url('Assets/Fonts/raleway-v17-latin-600.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('Assets/Fonts/raleway-v17-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Assets/Fonts/raleway-v17-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+         url('Assets/Fonts/raleway-v17-latin-600.woff') format('woff'), /* Modern Browsers */
+         url('Assets/Fonts/raleway-v17-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('Assets/Fonts/raleway-v17-latin-600.svg#Raleway') format('svg'); /* Legacy iOS */
+  }
+  
+  /* raleway-800 - latin */
+  @font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 800;
+    src: url('Assets/Fonts/raleway-v17-latin-800.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('Assets/Fonts/raleway-v17-latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Assets/Fonts/raleway-v17-latin-800.woff2') format('woff2'), /* Super Modern Browsers */
+         url('Assets/Fonts/raleway-v17-latin-800.woff') format('woff'), /* Modern Browsers */
+         url('Assets/Fonts/raleway-v17-latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('Assets/Fonts/raleway-v17-latin-800.svg#Raleway') format('svg'); /* Legacy iOS */
+  }
+  
+  /* raleway-900 - latin */
+  @font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 900;
+    src: url('Assets/Fonts/raleway-v17-latin-900.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('Assets/Fonts/raleway-v17-latin-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Assets/Fonts/raleway-v17-latin-900.woff2') format('woff2'), /* Super Modern Browsers */
+         url('Assets/Fonts/raleway-v17-latin-900.woff') format('woff'), /* Modern Browsers */
+         url('Assets/Fonts/raleway-v17-latin-900.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('Assets/Fonts/raleway-v17-latin-900.svg#Raleway') format('svg'); /* Legacy iOS */
+  }
+
+  /* roboto-300italic - latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 300;
+    src: url('Assets/Fonts/roboto-v20-latin-300italic.eot'); /* IE9 Compat Modes */
+    src: local('Roboto Light Italic'), local('Roboto-LightItalic'),
+         url('Assets/Fonts/roboto-v20-latin-300italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Assets/Fonts/roboto-v20-latin-300italic.woff2') format('woff2'), /* Super Modern Browsers */
+         url('Assets/Fonts/roboto-v20-latin-300italic.woff') format('woff'), /* Modern Browsers */
+         url('Assets/Fonts/roboto-v20-latin-300italic.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('Assets/Fonts/roboto-v20-latin-300italic.svg#Roboto') format('svg'); /* Legacy iOS */
+  }
+  
+  /* roboto-regular - latin */
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('Assets/Fonts/roboto-v20-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Roboto'), local('Roboto-Regular'),
+         url('Assets/Fonts/roboto-v20-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Assets/Fonts/roboto-v20-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('Assets/Fonts/roboto-v20-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('Assets/Fonts/roboto-v20-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('Assets/Fonts/roboto-v20-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+  }
+
+  /* varela-round-regular - latin */
+@font-face {
+    font-family: 'Varela Round';
+    font-style: normal;
+    font-weight: 400;
+    src: url('Assets/Fonts/varela-round-v13-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Varela Round Regular'), local('VarelaRound-Regular'),
+         url('Assets/Fonts/varela-round-v13-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Assets/Fonts/varela-round-v13-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('Assets/Fonts/varela-round-v13-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('Assets/Fonts/varela-round-v13-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('Assets/Fonts/varela-round-v13-latin-regular.svg#VarelaRound') format('svg'); /* Legacy iOS */
+  }
+  
+
+
+/*
+Colour palette:
+Light Cyan: #D6FFF6
+Russian Violet: #231651
+Medium Turquoise: #4DCCBD
+Spanish Blue: #2374AB
+Light Coral: #FF8484
+*/
+
+/*Placeholder Text*/
+.loremipsum:before {
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempor enim nec vestibulum mollis. Aenean elementum facilisis volutpat. In hendrerit magna laoreet justo dictum lacinia. Nunc bibendum id dolor non sollicitudin.";
 }
-/*Scrollbar using webkit - Inspiration from Fireship (Youtube)*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*Scrollbar using webkit */
 body::-webkit-scrollbar {
     width: 7px;
 }
@@ -26,19 +167,10 @@ body {
     scrollbar-color: #231651 #FFFFFF;
 }
 
-/*
-Colour palette:
-Light Cyan: #D6FFF6
-Russian Violet: #231651
-Medium Turquoise: #4DCCBD
-Spanish Blue: #2374AB
-Light Coral: #FF8484
-*/
-
-/*Testing Area Below*/
-
 
 /*Basic Things defined here:*/
+
+:root {font-family: "Roboto", sans-serif;}
 
 body{
     color: black;
@@ -51,42 +183,11 @@ main{
     padding: 16px;
 }
 
-.button {
-    border-radius: 20px;
-    background-color: #4DCCBD;
-}
-
-/*Placeholder Text*/
-.loremipsum:before {
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempor enim nec vestibulum mollis. Aenean elementum facilisis volutpat. In hendrerit magna laoreet justo dictum lacinia. Nunc bibendum id dolor non sollicitudin. Cras ullamcorper dui fringilla, consequat augue vitae, pulvinar libero. Maecenas hendrerit sem ac nisi rutrum, at bibendum libero vehicula. Vivamus placerat tincidunt elit eget suscipit. Pellentesque pulvinar dictum justo non blandit. Donec porta iaculis ante, ac mattis velit. Quisque consequat, nulla in porttitor pretium, leo nisi aliquam dolor, ac tincidunt nibh urna at lorem.Cras non lorem quis urna varius commodo sit amet et justo. Nunc diam tellus, viverra ut metus at, lacinia ullamcorper nisi. Cras venenatis diam ac dolor tempus vehicula. Ut quis velit vel dolor consectetur finibus. Aliquam nec placerat felis, vitae sodales eros. Phasellus sed magna nisi. Sed nisl nisl, bibendum faucibus nulla quis, consequat fermentum eros. Proin posuere sollicitudin justo. Morbi viverra, ligula ut tincidunt aliquam, neque orci vehicula quam, nec congue nisi enim non ipsum. Fusce finibus ligula neque, non blandit justo tristique id.Sed commodo pretium eros eu venenatis. Cras pulvinar egestas vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer sed tellus tincidunt erat porta ullamcorper. Sed et lorem justo. Nullam finibus diam eget nisi mattis malesuada. Nullam rutrum sem sit amet lectus tristique rhoncus. Quisque eu mi vel metus elementum tristique at vel leo. Praesent efficitur nunc diam, et volutpat ante faucibus et. Nunc laoreet vitae libero sed venenatis. Fusce in ipsum faucibus, egestas nibh vitae, suscipit orci. Proin cursus odio at justo convallis, sit amet ultrices felis egestas. Mauris scelerisque congue urna vel suscipit. Praesent consectetur massa vitae augue malesuada consequat.Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam commodo sed lacus sit amet pellentesque. Cras luctus est mauris. Aliquam metus magna, pulvinar nec laoreet id, fringilla sit amet tortor. Maecenas fringilla interdum lobortis. Integer tincidunt bibendum ante, ac malesuada odio luctus vitae. Nunc porttitor, nunc ut tempor ornare, nunc lectus placerat felis, a sagittis nisl eros in eros. Quisque dictum nibh lobortis, blandit tortor ac, mattis purus. Phasellus quis sapien sollicitudin, feugiat ante in, rutrum nisi. Morbi et massa congue, finibus leo in, lacinia purus. Vivamus luctus sem non urna lacinia, eu luctus odio imperdiet. Cras at justo aliquam, tempor ligula in, luctus risus.Donec ac tincidunt velit, sed tincidunt nisi. Vestibulum consectetur turpis vitae enim consectetur blandit quis id orci. Praesent in nisl quis urna imperdiet consectetur in ac mi. Curabitur aliquet, urna at convallis accumsan, eros ante suscipit turpis, imperdiet vestibulum ante velit at orci. Aenean semper sollicitudin ante, a facilisis odio varius quis. Nam tincidunt ullamcorper lectus et venenatis. Proin iaculis vulputate massa eu iaculis. In ut faucibus tellus. Curabitur auctor tellus sit amet elit scelerisque accumsan. Suspendisse scelerisque semper lectus. Quisque porta sem vitae pellentesque pharetra. Nullam nec efficitur lorem, sed porttitor elit.Vivamus at vestibulum sapien. Aliquam hendrerit mi nibh, eu luctus felis porta at. Donec rhoncus enim vel cursus viverra. Nulla faucibus mi nibh, id mattis mi congue in. Pellentesque imperdiet pharetra dapibus. Pellentesque molestie elementum mauris ac imperdiet. Mauris neque tellus, tincidunt vitae fermentum eget, pharetra non dui. Morbi tempus tincidunt metus, elementum tincidunt enim viverra nec. In efficitur arcu ut quam elementum, id ultricies massa sagittis. Donec eget condimentum nisl, dapibus auctor dui. Pellentesque viverra justo vel sem efficitur, volutpat pretium nulla varius. Maecenas elit neque, ultricies vel consequat nec, consequat eu lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus nulla odio, eleifend a ullamcorper vel, consequat in sapien. Morbi rutrum leo eget sem vulputate, at mattis quam bibendum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;Mauris condimentum enim rutrum purus maximus, in luctus diam imperdiet. Nullam vehicula id turpis a fringilla. Praesent mollis eu ex et dignissim. Etiam eu ultricies elit. Nam in rutrum lectus, eget pellentesque lorem. Pellentesque velit lorem, hendrerit nec arcu vitae, eleifend pharetra magna. Mauris semper in dolor in congue. Praesent quis nunc quis massa scelerisque porta non a quam. Fusce blandit a mauris a dictum. Suspendisse consectetur auctor purus sit amet mattis. Suspendisse consectetur lorem sem, vel lacinia ipsum efficitur ac. Suspendisse posuere feugiat purus. Sed eu quam erat.Donec feugiat pulvinar tristique. Etiam pretium tempus efficitur. Curabitur massa massa, fermentum ut euismod eu, convallis sed dui. Sed luctus ipsum nibh, vitae ullamcorper odio accumsan quis. Donec sit amet cursus ex. Vivamus sollicitudin mollis lectus et bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin varius finibus sodales. Sed efficitur, nibh vel ornare venenatis, odio ligula hendrerit libero, feugiat iaculis tellus libero ut massa. Vestibulum quis arcu at velit dignissim molestie. Integer rutrum ligula neque, et lacinia purus lobortis sit amet. Cras quis commodo nibh, in sagittis turpis. Nulla a laoreet leo. Ut quam massa, molestie eu malesuada non, porta vel ante.Donec erat purus, ornare quis ullamcorper a, cursus non arcu. In malesuada leo nec nibh pulvinar rutrum nec eget libero. Integer condimentum leo at aliquet tempus. Proin eget blandit purus, vel pulvinar dolor. Vestibulum tempor congue iaculis. Cras lobortis nunc sed arcu dictum sagittis. Curabitur sollicitudin vel libero ut tincidunt.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempus justo odio, at blandit enim commodo non. Sed sodales, purus et vehicula ullamcorper, sem sem hendrerit enim, eu rhoncus dolor dolor sit amet magna. Morbi convallis tellus eget mauris congue, ac vestibulum purus suscipit. Proin pretium dictum leo et rutrum. Pellentesque sed nulla ultricies, dictum nibh vel, viverra ligula. Cras ac pellentesque quam. Praesent erat risus, tincidunt in justo a, scelerisque porta massa. Pellentesque ac elementum ipsum. Donec laoreet tellus eu metus laoreet, eu finibus leo placerat. Cras et faucibus ante. In hac habitasse platea dictumst. Phasellus mollis mi et lacus semper euismod. Phasellus ullamcorper vel felis sed condimentum.Mauris commodo congue tellus sodales tincidunt. Proin vitae magna porttitor, semper elit sed, tincidunt lacus. Maecenas pulvinar tristique nulla, nec faucibus elit tristique vitae. Nam eget mauris augue. Nulla porttitor nibh ante, sodales rhoncus orci pulvinar ac. Duis vitae pulvinar libero. Ut fringilla nisi vel turpis interdum, condimentum lobortis turpis pellentesque.Sed ut libero et tellus imperdiet porttitor sodales non augue. Sed eget est interdum, placerat lectus vitae, mattis eros. Morbi dapibus magna non varius vulputate. Ut fringilla vulputate mauris in tristique. Curabitur vitae ultrices libero, ac tempus purus. Suspendisse aliquam diam lectus, eu pellentesque tellus vestibulum at. Nunc orci libero, dapibus vel feugiat vel, semper eget sapien. Proin fermentum interdum lacus, a suscipit purus porta eu. ";
-}
-
-/*Certain things for smaller devices listed here:*/
-
-
-
-    .navy{
-        width: 5rem;
-        height: 100vh;
-    }
-
-    .navy:hover {
-        width: 20rem;
-    }
-
-    .navy:hover .link-text {
-        display: block;
-    }
-
-    .navy:hover.logo {
-        background-color: #3B3871;
-    }
 
 /*Navbar defined here:*/
-
 .navy {
     position: fixed;
-    background-color: #231651;
+    background-color: #0A1123;
     transition: width 200ms ease;
     z-index: 100;
 }
@@ -104,7 +205,7 @@ main{
     font-size: 24px;
 }
 
-.navbar -item{
+.navbar-item{
     width: 100%;
 }
 
@@ -112,13 +213,14 @@ main{
     padding-right: 3rem;
     padding-left: 3rem;
     border-radius: 7px;
+    
 }
 .navbar-item:last-child {
     margin-top: auto;
 }
 
 .navbar-item:hover{
-    background-color: #3B3871;
+    background-color: #231631;
     transition: 300ms
 }
 
@@ -130,9 +232,17 @@ main{
     text-decoration: none;
 }
 
+
+.navy:hover .link-text {
+    opacity: 100%;
+    transition: 300ms;
+}
+
 .link-text{
     display: none;
     margin-left: 1rem;
+    transition: 200ms;
+    opacity: 0;
 }
 
 .nav-link i {
@@ -151,15 +261,40 @@ main{
     width: 100%;
 }
 
-/*Index.html Styles*/
+/*Certain things for smaller devices listed here:*/
+.navy{
+    width: 5rem;
+    height: 100vh;
+    z-index: 90;
+}
+
+.navy:hover {
+    width: 18rem;
+}
+
+.navy:hover .link-text {
+    display: block;
+}
+
+.navy:hover.logo {
+    background-color: #231651;
+}
+
+.footer {
+    height: 80px;
+    background-color: #0A1123;
+    margin: -30px;
+    margin-top: 50px;
+}
+
+/*Index.html Components*/
+
+/*Title Area*/
 
 #titlecard {
     z-index: 90;
     width: auto;
     display: block;
-    align-self: center;
-    align-content: center;
-    text-align: center;
     height: 100vh;
     margin-right: -17px;
     margin-left: -17px;
@@ -168,7 +303,7 @@ main{
 
 img { 
     max-width:100%; 
-            height:auto; 
+    height:auto; 
 } 
 
 #galazy{
@@ -178,104 +313,120 @@ img {
 }
 
 #title {
-    font-family: "Varela Round", sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900px;
+    font-size: 100px;
     position: absolute;
-    top: 200px;
-    right: 63%;
-    left: 37%;
-    z-index: 900;
-    width: 400px;
-    color: black;
-    font-size: 52px;
-    padding: 10px;
-    background-color: white;
-    border-radius: 5px;
-}
-
-.subtitle {
-    font-family: "Varela Round", sans-serif;
-    font-size: 40px;
-}
-
-.container {
-    margin: 20px;
-    padding: 30px;
-}
-
-#mainbutton {
-    height: 80px;
+    text-align:right;
+    top: 35px;
+    left:580px;
+    z-index: 89;
     width: 600px;
-    margin-bottom: 50px;
-    margin: 50px;
-}
-
-#mainbuttoncontent:before{
-    content:"This is a sample button";
-}
-
-#mainbuttoncontent{
-    font-family: "Varela Round", sans-serif;
-    font-size: 30px;
-    color: #FFFFFF;
-    padding: 22px;
-}
-/*Style for cards inspired by: Russ Perry*/
-
-.card
-{
-    height: 350px;
-    width: 300px;
-    padding: 20px;
+    color: white;
+    padding: 40px;
     border-radius: 5px;
+}
+
+/*Card Content Area
+Can be used with JS to automatically get 
+tweets/fb posts/ig posts for content*/
+
+#socialmedia {
+    margin-top: 50px;
+    padding: 30px;
+    display: flex;
+}
+
+.card {
+    display: flex;
     position: relative;
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-    margin: 20px;
-    list-style-type: none;
+    flex-direction: column;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: whitesmoke;
+    box-shadow: -0.5rem 0.5rem 4rem #BBBBBB;
+    transition: 0.2s;
 }
 
-#blog li{
-    z-index: -20;
-    list-style: none;
-    display: inline-block;
-    z-index: -1;
+.socialcontent {
+    height: 250px;
+    width: 400px;
+    min-width: 80px;
 }
 
-#recentcontent {
-    overflow-x: auto;
-    white-space: nowrap;
-    cursor: grab; 
-    cursor : -o-grab; 
-    cursor : -moz-grab; 
-    cursor : -webkit-grab;
-    border-left: 1px solid #DDDDDD;
-    border-right: 1px solid #DDDDDD;
-    margin-top: 250px;
+.socialcontent:hover {
+    transform: translateY(-1rem);
 }
 
-#recentcontent::-webkit-scrollbar {
-    width: 7px;
+.socialcontent:hover~.card {
+    transform: translateX(130px)
 }
 
-#recentcontent::-webkit-scrollbar-track {
-    background: white;
+.socialcontent:not(:first-child) {
+    margin-left: -130px;
 }
 
-#recentcontent::-webkit-scrollbar-thumb {
-    background: #231651;
+.card-bottom {
+    display: flex;
+    height: 30px;
 }
 
-
-#blogtitle {
-    position: absolute;
-    padding-left: 100px;
-    padding-top: 200px;
+.twitter {
+    height:30px;
+    width:30px;
+    border-radius: 4px;
 }
 
-#paragraph1text:before{
-    content:"This is some placeholder text. You can put whatever you want to be seen here.";
+.whatsnew {
+    font-size: 50px;
+    padding-right: 30px;
+    margin-bottom: -30px;
+    text-align: right;
+    align-self: end;
 }
 
-#paragraph1text {
-    font-size: 24px;
+.products {
+    margin: 30px;
+    margin-top: 60px;
 }
 
+.totop {
+    border-radius: 7px;
+    width: 100px;
+    color: white;
+    padding: 20px;
+    padding-top: 40px;  
+    margin-right: 20px;
+    position: relative;
+    bottom: 15px;
+    float: inline-end;
+}
+
+.totop:hover {
+    background-color: #231631;
+    transition: 300ms
+}
+
+#additionalcontent {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+#additionalcontent:before {
+    content: "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects and flies, then I feel the presence of the Almighty, who formed us in his own image, and the breath ";
+}
+
+.mainheader{
+    height: 200px;
+    background-color: #0A1123;
+    color: white;
+    margin: -80px;
+}
+
+.mainheader h2 {
+    position: relative;
+    top: 80px;
+    left: 900px;
+    font-size: 70px;
+    font-family: "Varela Round", serif;
+}
