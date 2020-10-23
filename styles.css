@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@300;700;800&family=Roboto:wght@300;400;700&display=swap');
+
+/*
+    font-family: 'Open Sans', sans-serif;
+
+    font-family: 'Open Sans Condensed', sans-serif;
+
+    font-family: 'Roboto', sans-serif;
+*/
+
+:root {
+    /*Colour variable definition*/
+    --primary: #2B2D42;
+    --background: #8D99AE;
+    --accent: #F8F32B;
+    --dark: #000000;
+    --light: #FFFFFF;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
