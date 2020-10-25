@@ -106,3 +106,12 @@ header {
     color: black;
     font-weight: bold;
 }
+
+.nava:hover {
+    background-color: #666666;
+}
+
+#highlightnav:hover {
+    background-color: #666666;
+    color: white;
+}
