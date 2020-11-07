@@ -55,7 +55,7 @@ body::-webkit-scrollbar-thumb {
     background: #CCCCCC;
 }
 
-p\::-moz-selection {
+::-moz-selection {
     background: #CCCCCC;
 }
 
