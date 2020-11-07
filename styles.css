@@ -51,6 +51,14 @@ body::-webkit-scrollbar-thumb {
     background: var(--light);
 }
 
+::selection{
+    background: #CCCCCC;
+}
+
+p\::-moz-selection {
+    background: #CCCCCC;
+}
+
 body {
     padding: 0;
     margin: 0;
