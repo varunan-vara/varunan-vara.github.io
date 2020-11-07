@@ -25,7 +25,7 @@
 @font-face {
     font-family: "M + 1";
     src: url("Assets/Fonts/mplus-1m-light.ttf");
-    font-weight: light;
+    font-weight: "light";
 }
 
 
@@ -45,25 +45,40 @@ body {
     padding: 0;
     margin: 0;
     background: var(--lessdark);
+    color: white;
+    font-family: "Open Sans", sans-serif;
 }
 
 a:link {
     text-decoration: none;
+    color: white;
+    
 }
 
 a:hover {
     text-decoration: none;
+    color: white;
 }
 
 a:visited {
     text-decoration: none;
+    color: white;
 }
 
 a:active {
     text-decoration: none;
+    color: white;
+}
+
+.link {
+    text-decoration: underline !important;
 }
 
 ul {
+    list-style: none;
+}
+
+ol {
     list-style: none;
 }
 
@@ -79,6 +94,7 @@ header {
     font-size: 3vw;
     margin-left: 2vw;
     font-style: normal;
+    text-decoration: none;
 }
 
 .navigation {
@@ -114,4 +130,28 @@ header {
 #highlightnav:hover {
     background-color: #666666;
     color: white;
+}
+
+.card {
+    background-color: #444444;
+    border-radius: 15px;
+    padding: 2vw;
+    margin: 1vw;
+}
+
+.subtitlep {
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+#activitycard ul {
+    list-style: disc;
+}
+
+#downloadcard a {
+    color: var(--primary);
+}
+
+#downloadcard a:active {
+    color: var(--accent);
 }
