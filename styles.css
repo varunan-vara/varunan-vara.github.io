@@ -28,8 +28,6 @@
     font-weight: "light";
 }
 
-
-
 :root {
     /*Colour variable definition*/
     --primary: #70ABAF;
@@ -39,6 +37,18 @@
     --dark: #000000;
     --light: #FFFFFF;
     --lessdark: #222222;
+}
+
+body::-webkit-scrollbar{
+    width: 0.4vw;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--lessdark);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--light);
 }
 
 body {
