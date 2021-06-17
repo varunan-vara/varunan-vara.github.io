@@ -31,25 +31,35 @@ ul {
     list-style-type: none;
 }
 
+.navbar {
+    background-color: var(--cadet-grey);
+    height: 16%;
+    width: 96%;
+    position: absolute;
+    top: 0;
+    margin: 2%;
+    border-radius: 4px;
+}
+
 .nava:link {
     text-decoration: none;
-    color: white;
+    color: var(--magnolia);
     
 }
 
 .nava:hover {
     text-decoration: none;
-    color: white;
+    color: var(--magnolia);
 }
 
 .nava:visited {
     text-decoration: none;
-    color: white;
+    color: var(--magnolia);
 }
 
 .nava:active {
     text-decoration: none;
-    color: white;
+    color: var(--magnolia);
 }
 
 .nava {
@@ -68,6 +78,7 @@ ul {
     float: left;
     padding: 1rem;
     margin: 1rem;
+    color: var(--magnolia);
 }
 
 .navli {
