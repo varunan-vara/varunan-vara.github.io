@@ -1,0 +1,75 @@
+/*
+    font-family: 'Roboto Condensed', sans-serif;
+
+    font-family: 'Saira Condensed', sans-serif;
+
+    font-family: 'Varela Round', sans-serif;
+*/
+
+:root {
+    /*Defining some standard colours*/
+    --raisin-black: #1E212B;
+    --cedar-chest: #DB504A;
+    --saffron: #E3B505;
+    --cadet-blue: #56A3A6;
+    --opal: #9AC2C5;
+    --cadet-grey: #829399;
+    --magnolia: #FCF7FF;
+    --silver-sand: #C4CAD0;
+    --steel-teal: #799496;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    font-size: 14px;
+    font-family: "Roboto Condensed", sans-serif;
+    background-color: var(--raisin-black);
+}
+
+ul {
+    list-style-type: none;
+}
+
+.nava:link {
+    text-decoration: none;
+    color: white;
+    
+}
+
+.nava:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.nava:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.nava:active {
+    text-decoration: none;
+    color: white;
+}
+
+.nava {
+    padding: 1rem;
+    margin: 2rem;
+    margin-top: 4rem;
+}
+
+.navul {
+    position: relative;
+    float: right;
+    top: 2rem;
+}
+
+.sitehead {
+    float: left;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.navli {
+    display: inline;
+}

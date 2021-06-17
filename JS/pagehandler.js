@@ -1,9 +1,6 @@
-function navify (currentpage) {
-    var h = document.getElementById("navbar");
-
-    //Cors Error
+/*//Cors Error
     //var navcontent;
-    /*var xhr = new XMLHttpRequest();
+    var xhr = new XMLHttpRequest();
     xhr.open(
         "GET",
         "./Assets/nav.html",
@@ -11,7 +8,7 @@ function navify (currentpage) {
     );
     xhr.send();
     console.log(xhr.responseText);
-    */
+    
 
     //Find full html in Assets/nav.html
     var navbarHTML = [
@@ -40,3 +37,5 @@ function navify (currentpage) {
 function footify () {
     //bruh
 }
+*/
+
