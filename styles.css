@@ -162,6 +162,11 @@ p, li {
 }
 
 .subtitlep {
+    font-size: 2.4vw;
+    font-weight: bold;
+}
+
+.subsubtitlep {
     font-size: 2vw;
     font-weight: bold;
 }
@@ -181,7 +186,7 @@ p, li {
     color: grey !important;
 }
 
-#activitycard ul {
+.activitycard ul {
     list-style: disc;
 }
 
