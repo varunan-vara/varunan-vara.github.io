@@ -1,91 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@300;700;800&family=Roboto:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;400;600;800&display=swap');
-
 /*
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;  Light 300, Bold 700
 
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif; Extra-Light 200, Light 300, Regular 400
 
-    font-family: 'Roboto', sans-serif;
-
-    font-family: 'Inconsolata', monospace;
+    font-family: 'Varela Round', sans-serif; Regular 400
 */
 
-@font-face {
-    font-family: "M + 1";
-    src: url("Assets/Fonts/mplus-1m-regular.ttf");
-}
-
-@font-face {
-    font-family: "M + 1";
-    src: url("Assets/Fonts/mplus-1m-bold.ttf");
-    font-weight: bold;
-}
-
-@font-face {
-    font-family: "M + 1";
-    src: url("Assets/Fonts/mplus-1m-light.ttf");
-    font-weight: "light";
-}
-
 :root {
-    /*Colour variable definition*/
-    --primary: #70ABAF;
-    --background: #F0F7F4;
-    --accent: #99E1D9;
-    --secondary: #32292F;
-    --dark: #000000;
-    --light: #FFFFFF;
-    --lessdark: #222222;
-}
-
-body::-webkit-scrollbar{
-    width: 0.4vw;
-}
-
-body::-webkit-scrollbar-track {
-    background: var(--lessdark);
-}
-
-body::-webkit-scrollbar-thumb {
-    background: var(--light);
-}
-
-::selection{
-    background: #CCCCCC;
-}
-
-::-moz-selection {
-    background: #CCCCCC;
+    font-size: 16px;
+    font-family: 'Source Sans Pro', sans-serif;
+    --background: #FFFFFA;
+    --black: #000103;
+    --jet: #333138;
+    --green1: #1D7874;
+    --green2: #679289;
 }
 
 body {
+    margin: 0px;
     padding: 0;
-    margin: 0;
-    background: var(--lessdark);
-    color: white;
-    font-family: "Open Sans", sans-serif;
+    display:grid;
+    color:var(--jet);
+    background: var(--background);
+}
+
+body::-webkit-scrollbar {
+    width:0.15rem;
+}
+
+body::-webkit-scrollbar-track{
+    background: var(--background);
+}
+
+body::-webkit-scrollbar-thumb{
+    background: var(--jet);
 }
 
 a:link {
     text-decoration: none;
-    color: white;
+    color: var(--jet);
     
 }
 
 a:hover {
     text-decoration: none;
-    color: white;
+    color: var(--jet);
 }
 
 a:visited {
     text-decoration: none;
-    color: white;
+    color: var(--jet);
 }
 
 a:active {
     text-decoration: none;
-    color: white;
+    color: var(--jet);
 }
 
 .link {
@@ -100,28 +69,44 @@ ol {
     list-style: none;
 }
 
-header {
-    background-color: var(--lessdark);
+.bigContainer {
+    position: relative;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titletext {
+    font-family: 'Varela Round', sans-serif;
+    color: var(--background);
+    padding: 40px;
+}
+
+.title {
+    align-self: flex-start;
+    float: left;
+}
+
+#navbar {
+    display:inline-flex;
     justify-content: space-between;
 }
 
-p, li {
-    font-size: 1.2vw;
-}
-
-.titletext{
-    color: var(--accent);
-    font-family: 'M + 1', monospace;
-    font-size: 3vw;
-    margin-left: 2vw;
-    font-style: normal;
-    text-decoration: none;
-}
-
 .navigation {
+    padding: auto;
+    margin: auto;
+    background-image: linear-gradient(to right, var(--green1), var(--green2));
+    width: 100%;
+}
+
+.navbarbuttons {
     float: right;
-    padding-top: .4vw;
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    -ms-transform: translateY(-62%);
+    transform: translateY(-62%);
+
 }
 
 .navli {
@@ -134,7 +119,7 @@ p, li {
     text-align: center;
     padding: 1.5vw;
     text-decoration: none;
-    font-family: 'M + 1', monospace;    
+    font-family: 'Source Sans Pro', sans-serif;    
     margin-right: 2vw;
     font-size: 1.3vw;
 }
@@ -145,65 +130,16 @@ p, li {
     font-weight: bold;
 }
 
+.nava {
+    transition: background-color 0.1s ease-out;
+}
+
 .nava:hover {
-    background-color: #666666;
+    background-color: rgba(255,255,255,0.3);
 }
 
 #highlightnav:hover {
     background-color: #666666;
-    color: white;
+    color: var(--background);
 }
 
-.card {
-    background-color: #444444;
-    border-radius: 1.4vw;
-    padding: 2vw;
-    margin: 1vw;
-}
-
-.subtitlep {
-    font-size: 2.4vw;
-    font-weight: bold;
-}
-
-.subsubtitlep {
-    font-size: 2vw;
-    font-weight: bold;
-}
-
-.projectbutton {
-    background-color: white;
-    color: black !important;
-    padding: 2vw;
-    margin: 1vw;
-    border-radius: 1vw;
-    font-weight: bold;
-    margin-top: 5vw;
-    position: relative;
-}
-
-.projectbutton:hover {
-    color: grey !important;
-}
-
-.activitycard ul {
-    list-style: disc;
-}
-
-#downloadcard a {
-    color: var(--primary);
-}
-
-#downloadcard a:active {
-    color: var(--accent);
-}
-
-#FirstMobileSite {
-    display: flex;
-    flex-direction: horizontal;
-    justify-content: space-between;
-}
-
-#FirstMobileSite div {
-    padding-right: 10vw;
-}
