@@ -198,6 +198,36 @@ ol {
     margin-top: 5rem;
     color: var(--background);
     z-index: 1;
+    animation: fadeIn linear 5s;
+    -webkit-animation: fadeIn linear 5s;
+    -moz-animation: fadeIn linear 5s;
+    -o-animation: fadeIn linear 5s;
+    -ms-animation: fadeIn linear 5s;
+}
+
+@keyframes fadeInH1 {
+    0% {opacity: 0;}
+    100% {opacity:1;}
+}
+
+@-moz-keyframes fadeInH1 {
+    0% {opacity: 0;}
+    100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeInH1 {
+    0% {opacity: 0;}
+    100% {opacity:1;}
+}
+
+@-o-keyframes fadeInH1 {
+    0% {opacity: 0;}
+    100% {opacity:1;}
+}
+
+@-ms-keyframes fadeInH1 {
+    0% {opacity: 0;}
+    100% {opacity:1;}
 }
 
 .headinglink {
@@ -297,7 +327,7 @@ h2 {
 
 #aboutme {
     margin-top: 70px;
-    
+    height: 1250px;
     font-size: 30px;
 }
 
@@ -313,4 +343,19 @@ h2 {
 #footer {
     height: 40px;
     background-image: linear-gradient(to right, var(--teal), var(--polished-pine));
+}
+
+.projecta {
+    width:100%;
+    margin:0;
+    padding: 0;
+    align-items: center;
+    align-content: center;
+}
+
+.projecta .projectcard {
+    width: 60%;
+    margin-right: 20%;
+    margin-left: 17%;
+    align-self: center;
 }
