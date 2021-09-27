@@ -25,11 +25,11 @@ body {
 }
 
 body::-webkit-scrollbar {
-    width:0.15rem;
+    width:0.4rem;
 }
 
 body::-webkit-scrollbar-track{
-    background: var(--background);
+    background: var(--green2);
 }
 
 body::-webkit-scrollbar-thumb{
@@ -143,3 +143,112 @@ ol {
     color: var(--background);
 }
 
+.custom-shape-divider-bottom-1632688346 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1632688346 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-bottom-1632688346 .shape-fill {
+    fill: #FFFFFF;
+}
+
+#headingArea {
+    background-image: linear-gradient(to right, var(--green1), var(--green2));
+    height: 40rem;
+    text-align: center;
+}
+
+.siteheading {
+    font-size: 80px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 200;
+    margin-bottom: 100px;
+    color: var(--background);
+}
+
+.mainh1:hover {
+    cursor:default;
+}
+
+.mainh1 {
+    border-radius: 1.6rem;
+    padding: 2rem;
+    margin-top: 5rem;
+    color: var(--background);
+}
+
+.headinglink {
+    color: var(--background);
+}
+
+.headinglink:visited {
+    color: #333138;
+}
+
+.headinglink:hover {
+    color: var(--background);
+    cursor: pointer;
+}
+
+.headinglink:active {
+    color: var(--background);
+}
+
+h2 {
+    font-size: 70px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+}
+
+#projectssubtitle {
+    margin-top: 70px;
+}
+
+.projectcard {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #efefef;
+    padding: 40px;
+    width: 60%;
+    border-radius: 40px;
+    color: var(--jet);
+    margin: 30px;
+}
+
+.projecttitle {
+    font-weight: 300;
+    font-size: 40px;
+    text-align: center;
+}
+
+.projectdescriptor {
+    font-size: 20px;
+}
+
+.langlogo {
+    float: right;
+}
+
+.projectlink:active{
+    color: var(--green1);
+}
+
+.projectlink:visited{
+    color: var(--jet);
+}
+
+.projectlink:hover{
+    color: var(--green1);
+}
