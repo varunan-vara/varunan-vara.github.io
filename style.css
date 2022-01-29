@@ -58,8 +58,8 @@ main {
 
 a:link {
   text-decoration: none;
-  color: var(--jet);
-  
+  color: #F1F3F6;
+
 }
 
 a:hover {
@@ -69,7 +69,7 @@ a:hover {
 
 a:visited {
   text-decoration: none;
-  color: var(--jet);
+  color: #F1F3F6;
 }
 
 a:active {
@@ -246,20 +246,19 @@ ol {
 }
 
 .headinglink {
-  color: var(--background);
-}
-
-.headinglink:visited {
-  color: #333138;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #CCCCCC;
 }
 
 .headinglink:hover {
-  color: var(--background);
+  color: #999999;
   cursor: pointer;
 }
 
 .headinglink:active {
-  color: var(--background);
+  color: #CCCCCC;
 }
 
 h2 {
@@ -297,21 +296,51 @@ h2 {
   align-self: center;
 }
 
-#projectsarea {
+.sticky-project {
+  height: 200rem;
+
+}
+
+.projectsarea {
   font-family: 'Varela Round', sans-serif;
-  font-size: 100px;
-  margin-top: 30rem;
+  margin-top: 5rem;
   margin-left: 5rem;
+  margin-right: 5rem;
   background-color: #EFEFEF;
-  width: 65rem;
-  justify-content: center;
-  align-content: center;
-  border-radius: 20rem;
+  width: 40rem;
+  border-radius: 5rem;
+  position: sticky;
+  top: 3rem;
+  transition: transform 0.1s ease-in-out;
+}
+
+#wide {
+  width: 110rem;
 }
 
 #ProjectsPopUp {
-  padding: 5rem;
+  font-size: 100px;
+  margin-left: 5rem;
+  position: absolute;
+  margin-top: 3rem;
+}
+
+.projectselector {
+  float: right;
+  padding: 4rem;
+}
+
+.selectorbutton {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-size: 4rem;
+  padding: 1.5rem 3rem 1.5rem 3rem;
+  border-radius: 4rem;
+  height: 8rem;
+  width: 8rem;
+  transition: all 1s ease;
   margin-left: 2rem;
+  cursor: pointer;
 }
 
 #BottomArrow, #TopArrow, #MiddleArrow {
@@ -332,4 +361,64 @@ svg:hover #MiddleArrow {
 }
 #background {
   z-index: -2;
+}
+
+.buttonselect {
+  background-color: #207975;
+  color: #FFFFFF;
+}
+
+h3 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+}
+
+.projectinfo {
+  position: absolute;
+  top: 18rem;
+  left: 68rem;
+  padding-right: 9rem;
+}
+
+#projecttitle {
+  font-size: 3rem;
+}
+
+#projectdescr {
+  font-size: 1.3rem;
+}
+
+#projectdescr, #projectdescr2 {
+  z-index: 1;
+}
+
+#projectdlink {
+  color: #207975;
+  z-index: 3;
+}
+
+#projectdlink:visited {
+  color: #007991;
+}
+
+#browserwindow {
+  position:absolute;
+  top: 18rem;
+  left: 10rem;
+  max-width: 100%;
+  z-index: -1;
+  background-color: rgba(0,0,0,0);
+  border-radius: 1rem;
+}
+
+#windowimage {
+  top: 45rem;
+  width: 45%;
+  background-color: rgba(0,0,0,0);
+  border-radius: 1rem;
+  box-shadow: -0.5rem 0.5rem 2rem #666666;
+}
+
+#navlogo {
+  height:30px;
 }

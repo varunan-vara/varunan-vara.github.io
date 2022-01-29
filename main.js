@@ -109,10 +109,110 @@ function plaque () {
         wireframe: true,
         transparent : true
     });
-    const mesh = new THREE.mesh(geometry, meshmaterial);
-    const wireframe = new THREE.mesh(geometry, wireframemesh);
+    const mesh = new THREE.Mesh(geometry, meshmaterial);
+    const wireframe = new THREE.Mesh(geometry, wireframemesh);
     mesh.add(wireframe);
     return mesh
+}
+
+function projectInfoText (secnum) {
+    if (secnum == 1) {
+        return [`
+        <p id="projecttitle">Python Interpreter</p>
+        <p id="projectdescr">Run Python in the web Browser</p>
+        <p id="projectdescr2">Working "IDE" Style Interface, running PyPy.js</p>
+        <p id="projectdescr2"><a id="projectdlink" href="https://varunan-vara.github.io/runPython/">View Demo Website</a></p>
+        <p id="projectdescr2"><a id="projectdlink" href="https://github.com/varunan-vara/runPython/">View Github Project</a></p>
+        `,
+        `
+        <img id="windowimage" alt="Project Image 1" src="Js-Shapes/Light1.svg" />
+        `
+    
+    ]
+    }
+    if (secnum == 2) {
+        return [`
+        <p id="projecttitle">AternosBot</p>
+        <p id="projectdescr">Start a minecraft server remotely!</p>
+        <p id="projectdescr2">Discord Bot made using Python, with an "API" built from scratch using selenium and http requests</p>
+        <p id="projectdescr2"><a id="projectdlink" href="https://github.com/varunan-vara/AternosBot">View Github Project</a></p>
+        `,
+        `
+        <img id="windowimage" alt="Project Image 2" src="Js-Shapes/Light2.svg" />
+        `
+    
+    ]
+    }
+    if (secnum == 3) {
+        return [`
+        <p id="projecttitle">Mobile Web Template</p>
+        <p id="projectdescr">Dynamic Website Made with HTML and CSS</p>
+        <p id="projectdescr2">A website made for companies with a social media presence. The website also contains several tabs, an animated sidebar, and can work on mobile devices!</p>
+        <p id="projectdescr2"><a id="projectdlink" href="https://varunan-vara.github.io/FirstMobileSite/">View Demo Website</a></p>
+        <p id="projectdescr2"><a id="projectdlink" href="https://github.com/varunan-vara/FirstMobileSite/">View Github Project</a></p>
+        `,
+        `
+        <img id="windowimage" alt="Project Image 2" src="Js-Shapes/Light3.svg" />
+        `
+    
+    ]
+    }
+
+    if (secnum == 4) {
+        return [`
+        <p id="projecttitle">Other Projects on my Github</p>
+        <p id="projectdescr">Visit my Github Account!</p>
+        <p id="projectdescr2">On my Github, I work on projects using JS, Python, HTML/CSS, C++, Java and more!</p>
+        <p id="projectdescr2"><a id="projectdlink" href="https://github.com/varunan-vara">View Github Page</a></p>
+        `,
+        `
+        <img id="windowimage" alt="Project Image 2" src="Js-Shapes/Light4.svg" />
+        `
+    
+    ]
+    }
+    return [`
+    <p id="projecttitle">Error: Project Number out of Range!</p>
+    `,""]
+}
+
+var projectcontext = 0;
+
+function projectmanager (scrollTop) {
+    var prevcontext = projectcontext;
+    if (scrollTop < 2100) {
+        $("#button1").addClass("buttonselect");
+        $("#button2").removeClass("buttonselect");
+        $("#button3").removeClass("buttonselect");
+        $("#button4").removeClass("buttonselect");
+        projectcontext = 1;
+    } else if (scrollTop > 2100 && scrollTop < 2600) {
+        $("#button1").removeClass("buttonselect");
+        $("#button2").addClass("buttonselect");
+        $("#button3").removeClass("buttonselect");
+        $("#button4").removeClass("buttonselect");
+        projectcontext = 2;
+    } else if (scrollTop > 2600 && scrollTop < 3100) {
+        $("#button1").removeClass("buttonselect");
+        $("#button2").removeClass("buttonselect");
+        $("#button3").addClass("buttonselect");
+        $("#button4").removeClass("buttonselect");
+        projectcontext = 3;
+    } else {
+        $("#button1").removeClass("buttonselect");
+        $("#button2").removeClass("buttonselect");
+        $("#button3").removeClass("buttonselect");
+        $("#button4").addClass("buttonselect");
+        projectcontext = 4;
+    }
+    if (projectcontext != prevcontext) {
+        $('#projectinfo').fadeOut(200, function() {
+            $(this).html(projectInfoText(projectcontext)[0]).fadeIn(200);
+        });
+        $('#browserwindow').fadeOut(200, function() {
+            $(this).html(projectInfoText(projectcontext)[1]).fadeIn(200);
+        });
+    }
 }
 
 function scroller () {
@@ -120,6 +220,26 @@ function scroller () {
 
     camera.position.y = (t) * -0.001;
     camera.position.x = (t) * -0.005;
+
+    if ($(window).scrollTop() >= 1618) {
+        $('.projectsarea').addClass('wide');
+    } else {
+        $('.projectsarea').addClass('not-wide');
+    }
+    var scrollTop = $(window).scrollTop();
+    if (scrollTop > 1550) {
+        $('.projectsarea').stop().animate({height: "60rem", width: "110rem"},20);
+        $('#hidemeproject').stop().animate({opacity: "1"},100);
+    }
+    else {
+            $('.projectsarea').stop().animate({height: "16rem", width: "65rem"},20);
+            $('#hidemeproject').stop().animate({opacity: "0"},10);   
+    }
+
+
+
+    projectmanager(scrollTop);
+    console.log(scrollTop);
 }
 
 function animate() {
@@ -130,14 +250,13 @@ function animate() {
         objects[i].rotation.y += Math.random() * 0.001;
         objects[i].rotation.z += Math.random() * 0.007;
     }
-    console.log(window.innerWidth);
     renderer.render( scene, camera );
 
     //temp
     camera.updateMatrix();
     var vector = camera.position.clone();
     //vector.applyMatrix3( camera.matrixWorld );
-    console.log(vector)
+
 }
 
 const objects = Array(5000).fill().map(flyingshape);
@@ -145,11 +264,10 @@ for (var i = 0; i < 400; i++) {
     scene.add(objects[i])
 }
 
+scroller();
 document.body.onscroll = scroller;
 lightup();
 
 //unused
-roundedplaque = plaque();
 
 animate();
-

@@ -2,11 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="Js-Shapes/Web Logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>varunan-vara.github.io</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js'></script>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&family=Open+Sans:wght@300;500&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&family=Source+Sans+Pro:wght@200;300;400&family=Varela+Round&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="styles.css">
@@ -48,8 +49,8 @@
       <section id="headingArea" class="bigContainer blob">
         <h1 class="mainh1">
             <span class="siteheading">Varunan Varathan</span><br><br>
-            Linkedin: <a class="headinglink" href="https://www.linkedin.com/in/varunan-varathan-48a312183">linkedin.com/in/varunan-varathan-48a312183</a><br>
-            Github: <a class="headinglink" href="https://github.com/varunan-vara">github.com/varunan-vara</a>
+            <a class="headinglink" href="https://www.linkedin.com/in/varunan-varathan-48a312183">My LinkedIn Profile</a><br>
+            <a class="headinglink" href="https://github.com/varunan-vara">Github</a>
         </h1>
         <svg width="50" height="50" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" id="ArrowSvg">
           <g id="Arrow Svg">
@@ -75,9 +76,21 @@
             </svg>
         </div>
     </section>
-    <section id="projectsarea">
-      <h3 id="ProjectsPopUp">My Projects</h3>
-    </section>
+    <div class="sticky-project">
+      <section class="projectsarea">
+        <h3 id="ProjectsPopUp">My Projects</h3>
+        <div id="hidemeproject">
+          <div class="projectselector">
+          <a class="selectorbutton" id="button1" onclick="window.scrollTo(0,1650)">1</a>
+          <a class="selectorbutton" id="button2" onclick="window.scrollTo(0,2150)">2</a>
+          <a class="selectorbutton" id="button3" onclick="window.scrollTo(0,2650)">3</a>
+          <a class="selectorbutton" id="button4" onclick="window.scrollTo(0,3150)">+</a>
+        </div>
+        <div class="projectinfo" id="projectinfo"></div>
+        <div id="browserwindow"></div>
+        </div>
+      </section>
+    </div>
       <header>
         <h1>Jeff Delaney</h1>
         <p>🚀 Welcome to my website!</p>
