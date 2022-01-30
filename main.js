@@ -228,8 +228,11 @@ function scroller () {
     }
     var scrollTop = $(window).scrollTop();
     if (scrollTop > 1550) {
-        $('.projectsarea').stop().animate({height: "60rem", width: "110rem"},20);
+        $('.projectsarea').stop().animate({height: "19.4%", width: "93%"},20);
         $('#hidemeproject').stop().animate({opacity: "1"},100);
+        if ($(window).width() < 1200){
+            $(".projectselector").stop().animate({opacity: "0"}, 100);
+        }
     }
     else {
             $('.projectsarea').stop().animate({height: "16rem", width: "65rem"},20);
@@ -239,7 +242,7 @@ function scroller () {
 
 
     projectmanager(scrollTop);
-    console.log(scrollTop);
+    console.log($(window).width());
 }
 
 function animate() {
