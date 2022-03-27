@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&family=Source+Sans+Pro:wght@200;300;400&family=Varela+Round&display=swap");
+
+:root {
+  font-size: 16px;
+  font-family: 'Source Sans Pro', sans-serif;
+  --background: #FFFFFA;
+  --black: #000103;
+  --jet: #333138;
+  --green1: #1D7874;
+  --green2: #679289;
+  --teal: #007991;
+  --polished-pine: #439A86;
+}
+
+html, body, div, h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+}
+
+/*.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}*/
+
+.main-container {
+  min-width: 100vw;
+  padding: 4vh;
+}
+
+.title {
+  font-family: "Varela Round", sans-serif;
+  font-size: calc(8px + 2vmin);
+  color: white;
+}
+
+#header-main {
+  background-image: linear-gradient(to right, var(--green1), var(--green2));
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+}
