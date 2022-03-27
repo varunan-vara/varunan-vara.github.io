@@ -18,7 +18,6 @@ function resizehandler () {
     renderer.setSize( window.innerWidth, window.innerHeight );
 }
 window.addEventListener( "resize", resizehandler, false);
-const controls = new OrbitControls(camera, renderer.domElement)
 
 /* -----Render Title Card----- */
 
@@ -247,7 +246,6 @@ function scroller () {
 
 function animate() {
     requestAnimationFrame( animate );
-    controls.update();
     for (var i = 0; i < 400; i++) {
         objects[i].rotation.x += Math.random() * 0.005;
         objects[i].rotation.y += Math.random() * 0.001;
