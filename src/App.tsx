@@ -62,7 +62,6 @@ constructor(props) {
       readMore: "Failed to Load",
   };
 }
-
   // Simply edits the current values of where the routing is pointing towards
   setRoute : FC<newRoute> = ({setTitle, setReadMore, setComponenet}) : ReactElement => {
     this.setState({title: setTitle})
@@ -70,15 +69,29 @@ constructor(props) {
     return setComponenet
   }
 
+  mx = 0
+  my = 0
+  px = 0
+  py = 0
+
+  //Inspiration for mouse position circle: https://codepen.io/plankton/pen/aGejYq
+
+  componentDidMount(): void {
+      document.addEventListener("mousemove", (e)=> {
+        
+        console.log("Success")
+      })
+  }
+
   setDarkMode = () : void => {
     this.setState({darkMode : (!this.state.darkMode)})
   }
   render () {
-    return (
+    return ( 
       <Router>
         <div id="AppWrapper">
           <Darkmode_Wrapper isDarkMode={this.state.darkMode}>
-
+            <canvas id="mouseHighlight"></canvas>
             <div id="mainContent">
               <Header title={this.state.title} readMore= {this.state.readMore} tabs = {[
                 {name: "Home", navOp: "/Home"},
