@@ -16,7 +16,7 @@ const AnimatingHome = () => {
       renderer.setSize( window.innerWidth, window.innerHeight );
       mountRef.current.appendChild( renderer.domElement );
   
-      var geometry = new THREE.BoxGeometry( 0, 0, 0 );
+      var geometry = new THREE.BoxGeometry(1,1,1);
       var material = new THREE.MeshBasicMaterial( { color: 0xffffff} );
       var cube = new THREE.Mesh( geometry, material );
   
@@ -27,15 +27,6 @@ const AnimatingHome = () => {
   
       var animate = function () {
         requestAnimationFrame( animate );
-        var position = window.pageYOffset;
-
-        if (position > initzoom[0] && position < initzoom[1]) {
-            geometry.dispose()
-            boxsize = 100 * ((initzoom[1] - position) / (initzoom[1] - initzoom[0]))
-            
-            cube.geometry = THREE.BoxGeometry(boxsize, boxsize, boxsize)
-        }
-        lastpos = position
         renderer.render( scene, camera );
       }
   

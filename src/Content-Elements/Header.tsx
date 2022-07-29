@@ -51,13 +51,34 @@ const Header : FC<HeaderType> = ({
                     ))}
                 </ul> : 
                 <div>
-                    <HamburgerMenu tabs={tabs} changeval={setSubMenu}/>
-                    <div id="sandwichMenu" style={{opacity: (submenu ? 1 : 0)}}></div>
+                    <div id="navSandwichMenu" onClick={() => {
+                        setSubMenu(!submenu)
+                        }} >
+                        <div id="lineOne" className="hamburgerline"></div>
+                        <div id="lineTwo" className="hamburgerline"></div>
+                    </div>
                 </div>    
                 }
             </div>
             <div id="siteHeader">
-                <p id="siteP">Varunan Varathan</p>
+                <p id="siteP">{
+                !submenu ? <p id="verticalTabOpts">Varunan Varathan</p> : <div>
+                    <ul id="verticalTabOpts">
+                    {tabs.map(tab=>(
+                        <li key={"tab-" + tab.name} id= {["navLi",tab.name].join("-")}>
+                        {
+                            tab.navOp.charAt(0) === "/" ? <Link className="navAVert" id= {["navA",tab.name].join("-")} to={tab.navOp}>
+                                                            {tab.name}
+                                                        </Link>
+                                                        : <a className="navAVert" id= {["navA",tab.name].join("-")} href={tab.navOp}>
+                                                        {tab.name}
+                                                        </a>
+                        }
+                    </li>
+                    ))}
+                    </ul>
+                </div>
+                }</p>
             </div>
             <div id="topLeftLogo">
                 &lt;My Website /&gt;

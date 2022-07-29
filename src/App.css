@@ -240,3 +240,26 @@ ol {
   position: sticky;
   top: 0;
 }
+
+#verticalTabOpts {
+  animation: 1s poof forwards;
+}
+
+#navul {
+  animation: 1s poof forwards;
+}
+
+#siteP {
+  animation: 1s poof forwards;
+}
+
+.navAVert {
+  margin: 2rem; 
+  color: white;
+  border-radius: 0.2rem;
+}
+
+.navA:hover {
+  background-color: rgba(255,255,255,0.3);
+  color: white;
+}
