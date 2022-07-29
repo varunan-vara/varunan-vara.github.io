@@ -1,8 +1,9 @@
 // A fullscreen header for the main github portfolio 
 // Will contain its own menubar different from the sidebar menu
 
-import React, { FC, ReactElement } from 'react';
+import React, { FC, ReactElement, useState } from 'react';
 import { Link } from "react-router-dom";
+import HamburgerMenu from './DropDownNav';
 
 function dimensions() {
     const { innerWidth: width, innerHeight: height} = window;
@@ -29,9 +30,12 @@ const Header : FC<HeaderType> = ({
     title, readMore, tabs
 }) : ReactElement => {
 
+    const [submenu, setSubMenu] = useState(false)
+
     return(
         <div id="HeaderParent">
             <div id="nav">
+                {dimensions()["width"] > 850 ? 
                 <ul id="navul">
                     {tabs.map(tab => (
                         <li key={"tab-" + tab.name} className="navLi" id= {["navLi",tab.name].join("-")}>
@@ -45,7 +49,12 @@ const Header : FC<HeaderType> = ({
                             }
                         </li>
                     ))}
-                </ul>
+                </ul> : 
+                <div>
+                    <HamburgerMenu tabs={tabs} changeval={setSubMenu}/>
+                    <div id="sandwichMenu" style={{opacity: (submenu ? 1 : 0)}}></div>
+                </div>    
+                }
             </div>
             <div id="siteHeader">
                 <p id="siteP">Varunan Varathan</p>

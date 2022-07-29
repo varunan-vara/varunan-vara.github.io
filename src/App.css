@@ -136,13 +136,56 @@ ol {
 
 #siteP {
   justify-content: center;
-  font-size: 6vw;
+  font-size: clamp(2rem, 6vw, 6rem);
+  text-align: center;
 }
 
 #topLeftLogo {
   font-family: "Varela Round";
-  font-size: 2rem;
+  font-size: clamp(1rem, 2vw, 2.5rem);
   padding-left: 2rem;
+}
+
+@keyframes poof {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#navSandwichMenu {
+  height: 3rem;
+  width: 3rem;
+  margin-top: -.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#navSandwichMenu:hover {
+  background-color: rgba(255,255,255,0.3);
+}
+
+.hamburgerline {
+  width: 2rem;
+  height: 0.05rem;
+  background-color: #FFFFFF;
+  margin: 0.3rem;
+  z-index: 1;
+}
+
+#sandwichMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000103;
+  z-index: 0.9;
 }
 
 /* .arrow CSS from https://codepen.io/pjwiebe/pen/VmmxpM */
