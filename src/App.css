@@ -90,7 +90,7 @@ ol {
 }
 
 #HeaderParent {
-  height: 60rem;
+  height: 65rem;
   width: 100vw;
   padding-top: 5vh;
   color: white;
@@ -191,4 +191,9 @@ ol {
 
 #homeContentSection {
   height: 2600vh
+}
+
+#threeAnim {
+  position: sticky;
+  top: 0;
 }

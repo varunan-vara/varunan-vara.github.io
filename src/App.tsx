@@ -5,6 +5,7 @@ import React  from "react";
 import { FC, ReactElement } from "react";
 import Darkmode_Wrapper from './Wrapper-Elements/Darkmode-Wrapper';
 import Header from './Content-Elements/Header'
+import AnimatingHome from './Content-Elements/ThreeElements';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 
@@ -21,7 +22,9 @@ interface home {
 }
 
 const Home: FC<home> = ({}) : ReactElement => {
-  return <div className="contentSection" id="homeContentSection"></div>
+  return <div className="contentSection" id="homeContentSection">
+    <AnimatingHome />
+  </div>
 }
 
 interface myProjects {
@@ -74,14 +77,6 @@ constructor(props) {
   px = 0
   py = 0
 
-  //Inspiration for mouse position circle: https://codepen.io/plankton/pen/aGejYq
-
-  componentDidMount(): void {
-      document.addEventListener("mousemove", (e)=> {
-        
-        console.log("Success")
-      })
-  }
 
   setDarkMode = () : void => {
     this.setState({darkMode : (!this.state.darkMode)})
