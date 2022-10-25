@@ -14,10 +14,12 @@
   --orange2: #B02E0C;
   --teal: #007991;
   --polished-pine: #439A86;
+  --olive: #000;
 }
 
 html, body {
   overscroll-behavior-y: none;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -164,6 +166,7 @@ ol {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  z-index: 1;
 }
 
 #navSandwichMenu:hover {
@@ -174,7 +177,7 @@ ol {
   width: 2rem;
   height: 0.05rem;
   background-color: #FFFFFF;
-  margin: 0.3rem;
+  margin: 0.6vw;
   z-index: 1;
 }
 
@@ -185,7 +188,7 @@ ol {
   width: 100vw;
   height: 100vh;
   background-color: #000103;
-  z-index: 0.9;
+  z-index: 0.8;
 }
 
 /* .arrow CSS from https://codepen.io/pjwiebe/pen/VmmxpM */
@@ -203,6 +206,10 @@ ol {
 .arrow:hover {
   border-bottom-width: 4px;
   border-right-width: 4px;
+}
+
+.arrowa {
+  transition: 400ms;
 }
 
 #bigArrow {
@@ -232,14 +239,6 @@ ol {
   position: absolute;
 }
 
-#homeContentSection {
-  height: 2600vh
-}
-
-#threeAnim {
-  position: sticky;
-  top: 0;
-}
 
 #verticalTabOpts {
   animation: 1s poof forwards;
@@ -254,12 +253,115 @@ ol {
 }
 
 .navAVert {
-  margin: 2rem; 
+  margin: 8rem; 
   color: white;
   border-radius: 0.2rem;
 }
 
-.navA:hover {
+.navAVertHover:hover {
   background-color: rgba(255,255,255,0.3);
   color: white;
+}
+
+#ProjectsTitleSVG {
+  float:right;
+  margin: 4rem;
+}
+
+.subtitle{
+  color: #FFFFFF;
+}
+
+#Pad, #Pencil, #Tip, #Eraser {
+  transition: all 2s ease;
+}
+
+.HomeLinks > div {
+  margin: 8vh 6vh 0 6vh;
+}
+
+#dividerItem1 {
+  height:2vh;
+}
+
+.shadedBoxShadow {
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+}
+
+#blogAd {
+  display: grid;
+  background-color: var(--background);
+  padding: 8vh;
+  border-radius: 20px;
+}
+
+#blogIntro {
+  font-family: "Varela Round";
+  font-size: 6vh;
+}
+
+.rblogTitle {
+  margin-top: 4vh;
+  font-family: "Varela Round";
+  font-size: 3vh;
+}
+
+#moreBlogContentButton {
+  text-decoration: none;
+  border: none;
+  background: #EEEEEE;
+  font-size: 2vh;
+  padding: 2vh;
+  margin: 6vh 30vh 0 30vh;
+  font-family: "Varela Round";
+  border-radius: 4vh;
+}
+
+#quickLinks {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--background);
+  padding: 8vh;
+  border-radius: 20px;
+}
+
+.socialsButton {
+  height: 8vh;
+  width: 25vw;
+  margin : 1vw;
+  text-decoration: none;
+  border: none;
+  font-family: "Varela Round";
+  font-size: 2vh;
+  border-radius: 6vh;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 8vh;
+}
+
+/*link hover visited active*/
+
+#linkedInButton {
+  background-color: #2977C9;
+  color: #FFFFFF;
+}
+
+#githubButton {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+#resumeButton {
+  background-color: #EEE;
+  color: #000000;
+}
+
+#idkyet {
+  height: 40vh;
 }

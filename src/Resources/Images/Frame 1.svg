@@ -1,0 +1,14 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame 1" clip-path="url(#clip0_2_2)">
+<rect width="400" height="400" fill="white"/>
+<rect id="Pad" y="324.987" width="330" height="200" rx="10" transform="rotate(-80 0 324.987)" fill="white"/>
+<path id="Pencil" d="M239.212 152.226C238.731 146.724 242.801 141.873 248.302 141.392L288.15 137.906C293.652 137.424 298.502 141.494 298.984 146.996L314.672 326.311C315.153 331.813 311.083 336.663 305.581 337.145L265.734 340.631C260.232 341.112 255.381 337.042 254.9 331.541L239.212 152.226Z" fill="white"/>
+<path id="Tip" d="M352.919 199.276C361.786 195.891 369.94 205.608 365.066 213.753L346.347 245.039C342.817 250.938 334.525 251.599 330.106 246.332L314.764 228.049C310.345 222.782 312.435 214.73 318.858 212.278L352.919 199.276Z" fill="white"/>
+<rect id="Eraser" x="360.962" y="115.981" width="60" height="30" rx="10" transform="rotate(-150 360.962 115.981)" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_2_2">
+<rect width="400" height="400" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -1,3 +1,5 @@
+import React  from "react";
+
 // A Wrapper that changes the classname based on whether it is darkmode or not
 function Darkmode_Wrapper (props) {
     if (props.isDarkMode === true) {

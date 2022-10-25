@@ -5,7 +5,7 @@ import React  from "react";
 import { FC, ReactElement } from "react";
 import Darkmode_Wrapper from './Wrapper-Elements/Darkmode-Wrapper';
 import Header from './Content-Elements/Header'
-import AnimatingHome from './Content-Elements/ThreeElements';
+import AnimatingHome from './Content-Elements/HomeScreen';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 
@@ -58,11 +58,11 @@ constructor(props) {
   super(props);
   this.state = {
       // Pass into darkmode wrapper
-      darkMode: false,
+      darkMode: true,
       // Title of the Header element
       title: "Varunan Varathan",
       // What comes above the arrow at the bottom of the page
-      readMore: "Failed to Load",
+      readMore: "",
   };
 }
   // Simply edits the current values of where the routing is pointing towards

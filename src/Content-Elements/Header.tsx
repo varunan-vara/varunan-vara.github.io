@@ -2,7 +2,7 @@
 // Will contain its own menubar different from the sidebar menu
 
 import React, { FC, ReactElement, useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useLocation} from "react-router-dom";
 import HamburgerMenu from './DropDownNav';
 
 function dimensions() {
@@ -29,6 +29,10 @@ interface HeaderType {
 const Header : FC<HeaderType> = ({
     title, readMore, tabs
 }) : ReactElement => {
+
+    const pathName = useLocation().pathname;
+    console.log(pathName);
+    const titleName = (pathName === "/MyProjects") ? "My Projects" : (pathName === "/AboutMe") ? "About Me" : (pathName === "/Home" || pathName === "/") ? "Varunan Varathan" : "Oops... that link does not exist :(";
 
     const [submenu, setSubMenu] = useState(false)
 
@@ -61,11 +65,11 @@ const Header : FC<HeaderType> = ({
                 }
             </div>
             <div id="siteHeader">
-                <p id="siteP">{
-                !submenu ? <p id="verticalTabOpts">Varunan Varathan</p> : <div>
+                <div id="siteP">{
+                !submenu ? <p id="verticalTabOpts">{titleName}</p> : <div>
                     <ul id="verticalTabOpts">
                     {tabs.map(tab=>(
-                        <li key={"tab-" + tab.name} id= {["navLi",tab.name].join("-")}>
+                        <li key={"tab-" + tab.name} className="navAVert navAVertHover" id= {["navLi",tab.name].join("-")}>
                         {
                             tab.navOp.charAt(0) === "/" ? <Link className="navAVert" id= {["navA",tab.name].join("-")} to={tab.navOp}>
                                                             {tab.name}
@@ -78,12 +82,12 @@ const Header : FC<HeaderType> = ({
                     ))}
                     </ul>
                 </div>
-                }</p>
+                }</div>
             </div>
             <div id="topLeftLogo">
-                &lt;My Website /&gt;
+                &lt;Portfolio /&gt;
             </div>
-            <div className="arrow" id="bigArrow"></div>
+            {(titleName === "Oops... that link does not exist :(") ? <div></div> : <a href="#nextPageItem" className="arrowa"><div className="arrow" id="bigArrow"></div></a>}
             <div className="readMoreText">
                 <p className="readMoreP">{readMore}</p>
             </div>
