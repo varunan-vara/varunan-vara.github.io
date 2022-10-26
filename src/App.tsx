@@ -65,12 +65,6 @@ constructor(props) {
       readMore: "",
   };
 }
-  // Simply edits the current values of where the routing is pointing towards
-  setRoute : FC<newRoute> = ({setTitle, setReadMore, setComponenet}) : ReactElement => {
-    this.setState({title: setTitle})
-    this.setState({readMore: setReadMore})
-    return setComponenet
-  }
 
   mx = 0
   my = 0
@@ -86,9 +80,9 @@ constructor(props) {
       <Router>
         <div id="AppWrapper">
           <Darkmode_Wrapper isDarkMode={this.state.darkMode}>
-            <canvas id="mouseHighlight"></canvas>
             <div id="mainContent">
-              <Header title={this.state.title} readMore= {this.state.readMore} tabs = {[
+              <Header 
+              tabs = {[
                 {name: "Home", navOp: "/Home"},
                 {name : "Projects", navOp: "/MyProjects"}, 
                 {name: "About Me", navOp: "/AboutMe"}, 
@@ -96,26 +90,10 @@ constructor(props) {
               ]}/>
 
 <Routes>
-                <Route path="/" element={this.setRoute({
-                    setTitle :  "Varunan Varathan",
-                    setReadMore : "",
-                    setComponenet : <Home />
-                  })}/>
-                <Route path="/Home" element={this.setRoute({
-                    setTitle :  "Varunan Varathan",
-                    setReadMore : "",
-                    setComponenet : <Home />
-                  })}/>
-                <Route path="/MyProjects" element={this.setRoute({
-                    setTitle :  "MyProjects",
-                    setReadMore : "Scroll",
-                    setComponenet : <MyProjects />
-                  })}/>
-                <Route path="/AboutMe" element={this.setRoute({
-                    setTitle :  "About Me",
-                    setReadMore : "",
-                    setComponenet : <AboutMe />
-                  })}/>
+                <Route path="/" element={<Home />}/>
+                <Route path="/Home" element={<Home />}/>
+                <Route path="/MyProjects" element={ <MyProjects />}/>
+                <Route path="/AboutMe" element={<AboutMe />}/>
               </Routes>
 
             </div>

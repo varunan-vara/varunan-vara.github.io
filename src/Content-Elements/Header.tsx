@@ -21,19 +21,22 @@ interface tabOptions {
 }
 
 interface HeaderType {
-    title : string,
-    readMore: string,
     tabs : tabOptions[]
 }
 
 const Header : FC<HeaderType> = ({
-    title, readMore, tabs
+    tabs
 }) : ReactElement => {
-
-    const pathName = useLocation().pathname;
-    console.log(pathName);
+    function handleResize () {
+        if (dimensions()["width"] > 850) {
+            setSubMenu(false);
+        }
+    }
+    window.addEventListener('resize', handleResize);
+    var pathName = "0";
+    pathName = useLocation().pathname;
     const titleName = (pathName === "/MyProjects") ? "My Projects" : (pathName === "/AboutMe") ? "About Me" : (pathName === "/Home" || pathName === "/") ? "Varunan Varathan" : "Oops... that link does not exist :(";
-
+    // const titleName = "Oops... that link does not exist :(";
     const [submenu, setSubMenu] = useState(false)
 
     return(
@@ -56,7 +59,9 @@ const Header : FC<HeaderType> = ({
                 </ul> : 
                 <div>
                     <div id="navSandwichMenu" onClick={() => {
-                        setSubMenu(!submenu)
+                        if (dimensions()["width"] < 850) {
+                            setSubMenu(!submenu)
+                        } else {setSubMenu(false)}
                         }} >
                         <div id="lineOne" className="hamburgerline"></div>
                         <div id="lineTwo" className="hamburgerline"></div>
@@ -66,12 +71,12 @@ const Header : FC<HeaderType> = ({
             </div>
             <div id="siteHeader">
                 <div id="siteP">{
-                !submenu ? <p id="verticalTabOpts">{titleName}</p> : <div>
+                !submenu ? <p id="verticalTabOpts">{titleName}</p> : <div id="dropdownParent">
                     <ul id="verticalTabOpts">
                     {tabs.map(tab=>(
                         <li key={"tab-" + tab.name} className="navAVert navAVertHover" id= {["navLi",tab.name].join("-")}>
                         {
-                            tab.navOp.charAt(0) === "/" ? <Link className="navAVert" id= {["navA",tab.name].join("-")} to={tab.navOp}>
+                            tab.navOp.charAt(0) === "/" ? <Link className="navAVert" id= {["navA",tab.name].join("-")} to={tab.navOp} onClick={() => setSubMenu(false)}>
                                                             {tab.name}
                                                         </Link>
                                                         : <a className="navAVert" id= {["navA",tab.name].join("-")} href={tab.navOp}>
@@ -88,9 +93,6 @@ const Header : FC<HeaderType> = ({
                 &lt;Portfolio /&gt;
             </div>
             {(titleName === "Oops... that link does not exist :(") ? <div></div> : <a href="#nextPageItem" className="arrowa"><div className="arrow" id="bigArrow"></div></a>}
-            <div className="readMoreText">
-                <p className="readMoreP">{readMore}</p>
-            </div>
         </div>
     )
 }

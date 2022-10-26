@@ -13,7 +13,7 @@
   --orange1: #EB4511;
   --orange2: #B02E0C;
   --teal: #007991;
-  --polished-pine: #439A86;
+  --polished-pine: #8b9c98;
   --olive: #000;
 }
 
@@ -44,10 +44,10 @@ body::-webkit-scrollbar-thumb{
 }
 
 ::selection {
-  background: var(--green2); /* WebKit/Blink Browsers */
+  background: var(--teal); /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
-  background: var(--green2); /* Gecko Browsers */
+  background: var(--polished-pine); /* Gecko Browsers */
 }
 
 #AppWraper {
@@ -92,7 +92,7 @@ ol {
 }
 
 #HeaderParent {
-  height: 65rem;
+  height: 100vh;
   width: 100vw;
   padding-top: 5vh;
   color: white;
@@ -140,6 +140,11 @@ ol {
   justify-content: center;
   font-size: clamp(2rem, 6vw, 6rem);
   text-align: center;
+}
+
+#dropdownParent {
+  margin: 20vh 0 20vh;
+  padding: 10vh;
 }
 
 #topLeftLogo {
@@ -230,16 +235,6 @@ ol {
   padding: 0;
 }
 
-#mouseHighlight {
-  color: rgba(255,255,255,0.5);
-  z-index: -1;
-  width: 60px; 
-	height: 60px; 
-  border-radius: 50%; 
-  position: absolute;
-}
-
-
 #verticalTabOpts {
   animation: 1s poof forwards;
 }
@@ -277,7 +272,9 @@ ol {
 }
 
 .HomeLinks > div {
-  margin: 8vh 6vh 0 6vh;
+  min-width: 0px;
+  margin: 8vh 6vw 0;
+  width: 88vw;
 }
 
 #dividerItem1 {
@@ -296,53 +293,92 @@ ol {
 
 #blogAd {
   display: grid;
+  width: 70vw;
   background-color: var(--background);
-  padding: 8vh;
+  padding: 6vh 9vw 6vh 9vw;
   border-radius: 20px;
 }
 
-#blogIntro {
-  font-family: "Varela Round";
-  font-size: 6vh;
+#recentBlogPost {
+  width: 70vw;
 }
 
-.rblogTitle {
+h2 {
+  font-family: "Varela Round";
+  font-size: 6vw;
+}
+
+h3 {
   margin-top: 4vh;
   font-family: "Varela Round";
-  font-size: 3vh;
+  font-size: 3vw;
+}
+
+.rblogContent {
+  font-size: 3vw;
 }
 
 #moreBlogContentButton {
   text-decoration: none;
   border: none;
   background: #EEEEEE;
-  font-size: 2vh;
-  padding: 2vh;
-  margin: 6vh 30vh 0 30vh;
+  font-size: 3vw;
+  padding: 2vh 2vw;
+  margin: 6vh 10vw 0;
   font-family: "Varela Round";
   border-radius: 4vh;
+  text-align: center;
+  vertical-align: middle;
+  color: var(--jet);
+  width: 50vw;
 }
 
 #quickLinks {
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
   background-color: var(--background);
-  padding: 8vh;
+  padding: 8vh 8vw;
   border-radius: 20px;
+  width: 71.7vw;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 .socialsButton {
   height: 8vh;
-  width: 25vw;
+  width: minmax(240px, 25vw);
   margin : 1vw;
   text-decoration: none;
   border: none;
   font-family: "Varela Round";
-  font-size: 2vh;
+  font-size: 4vw;
   border-radius: 6vh;
   text-align: center;
   vertical-align: middle;
   line-height: 8vh;
+  z-index: 1;
+}
+
+
+@media screen and (min-width: 620px) {
+  h2 {
+    font-size: 37.5px;
+  }
+  h3 {
+    font-size: 18.75px;
+  }
+  .rblogContent {
+    font-size: 18.75px;
+  }
+  .socialsButton {
+    font-size: 25px;
+  }
+  #moreBlogContentButton {
+    font-size: 18.75px;
+  }
+}
+
+.socialsButton:hover {
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
 }
 
 /*link hover visited active*/
@@ -362,6 +398,54 @@ ol {
   color: #000000;
 }
 
+#resumeButton:hover {
+  box-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.1);
+}
+
 #idkyet {
-  height: 40vh;
+  height: 20vh;
+}
+
+#canvaScrollHolder {
+  height: 1400vh;
+  min-height: 1400vh;
+  margin: 0;
+  width: 100vw;
+  padding: 0;
+}
+
+.custom-shape-divider-bottom-1632688346 {
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 700px;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1632688346 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+
+.custom-shape-divider-bottom-1632688346 .shape-fill {
+  fill: #FFFFFF;
+}
+
+#curveHolder {
+  margin: -40vh 0 0;
+}
+
+#canvasdiv {
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  position: sticky;
+  top: 0;
 }
