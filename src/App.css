@@ -56,6 +56,10 @@ body::-webkit-scrollbar-thumb{
   font-size: 16px;
 }
 
+a {
+  color: var(--green1);
+}
+
 a:link {
   text-decoration: none;
   /* color: var(--jet); */
@@ -64,6 +68,7 @@ a:link {
 
 a:hover {
   text-decoration: none;
+  color: var(--green2)
   /* color: var(--jet); */
 }
 
@@ -439,13 +444,75 @@ h3 {
   margin: -40vh 0 0;
 }
 
-#canvasdiv {
+#enggrid {
   width: 100vw;
-  height: 100vh;
-  max-height: 100vh;
   background-color: white;
   margin: 0;
   padding: 0;
-  position: sticky;
   top: 0;
+  display: grid;
+}
+
+#NotionLink {
+  height: 10vh;
+  width: 80vw;
+  margin: 8vw;
+}
+
+#notionButton {
+  background-color: #EEE;
+  color: #000000;
+  margin: 1vw;
+}
+
+#notionButton:hover {
+  box-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.1);
+}
+
+#NotionLink {
+  display: grid;
+  flex-wrap: wrap;
+  background-color: var(--background);
+  padding: 8vh 8vw;
+  border-radius: 20px;
+  width: 67vw;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.ProjectBox {
+  margin: 8vw;
+  background-color: #FFF;
+  width: 83vw;
+  border-radius: 2vh;
+  padding-bottom: 0;
+}
+
+.ProjectBoxTitle {
+  font-weight: bold;
+  font-size: 3.5vw;
+  padding: 2vw;
+  padding-bottom: 0;
+  margin-bottom: 1vh;
+}
+
+.ProjectBoxSubtitle {
+  font-weight:bold;
+  font-size: 1.2vw;
+  padding: 2vw;
+  padding-bottom: 0;
+}
+
+.ProjectBoxText {
+  padding: 2vw;
+  padding-bottom: 0;
+}
+
+.ProjectSpacer {
+  padding: 2vw;
+  padding-bottom: 0;
+  height: 4vh;
+}
+
+#footer {
+  height: 10vh;
 }

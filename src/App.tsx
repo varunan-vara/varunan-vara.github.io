@@ -83,9 +83,10 @@ constructor(props) {
             <div id="mainContent">
               <Header 
               tabs = {[
+                // Routing is made in advance, in case it is needed in the future
                 {name: "Home", navOp: "/Home"},
-                {name : "Projects", navOp: "/MyProjects"}, 
-                {name: "About Me", navOp: "/AboutMe"}, 
+                {name : "Projects", navOp: "https://varunan-vara.notion.site/"}, 
+                // {name: "About Me", navOp: "/AboutMe"}, 
                 {name: "GitHub", navOp: "https://github.com/varunan-vara"}
               ]}/>
 
@@ -93,6 +94,7 @@ constructor(props) {
                 <Route path="/" element={<Home />}/>
                 <Route path="/Home" element={<Home />}/>
                 <Route path="/MyProjects" element={ <MyProjects />}/>
+                // In the future, MyProjects will be converted to a React site instead of Notion
                 <Route path="/AboutMe" element={<AboutMe />}/>
               </Routes>
 
