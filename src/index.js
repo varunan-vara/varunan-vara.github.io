@@ -1,13 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import 'bulma/css/bulma.min.css';
 import './index.css';
-import App from './App';
-import reportWebVitals from './ReactEssentials/reportWebVitals';
+import HomePage from './Pages/Home';
+import ProjectsMainPage from './Pages/Projects';
+import reportWebVitals from './reportWebVitals';
+import {  
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage />,
+  },
+  {
+    path: "/projects",
+    element: <ProjectsMainPage />
+  }
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

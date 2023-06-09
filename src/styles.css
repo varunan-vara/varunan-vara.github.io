@@ -1,0 +1,192 @@
+body::-webkit-scrollbar {
+width:0.4rem;
+}
+
+body::-webkit-scrollbar-track{
+background: var(--green2);
+}
+
+body::-webkit-scrollbar-thumb{
+background: var(--jet);
+}
+
+::selection {
+background: var(--teal); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+background: var(--polished-pine); /* Gecko Browsers */
+}
+
+#AppWraper {
+margin: 0;
+padding: 0;
+font-size: 16px;
+}
+
+a {
+color: var(--green1);
+}
+
+a:link {
+text-decoration: none;
+/* color: var(--jet); */
+
+}
+
+a:hover {
+text-decoration: none;
+color: var(--green2)
+/* color: var(--jet); */
+}
+
+a:visited {
+text-decoration: none;
+/* color: var(--jet); */
+}
+
+a:active {
+text-decoration: none;
+/* color: var(--jet); */
+}
+
+.link {
+text-decoration: underline !important;
+}
+
+ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+ol {
+list-style: none;
+}
+
+.navbar-button {
+    outline: none;
+    width: 10rem;
+    text-align: center;
+}
+
+.navbar {
+    background-color: transparent;
+}
+
+.navbar > * {
+    margin: 2rem;
+}
+
+.menuSpan {
+    color: white;
+}
+#topLeftLogo {
+    font-family: "Varela Round";
+    font-size: clamp(1rem, 2vw, 2.5rem);
+    color: white;
+}
+
+.navbar-button > div {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.navbar-item {
+    margin: 1rem
+}
+
+.is-active > .navbar-end > .navbar-item > .navbar-itemitem > .navbar-button > div {
+    color: black;
+    width: 50vw;
+    text-align: center;
+    margin: auto;
+}
+
+.navbar-button:hover > div {
+    color: black;
+}
+
+.navbar-button:hover {
+    color: transparent;
+}
+
+.navbar-item:hover {
+    color: transparent;
+    border-radius: 200px;
+}
+
+.navbar-brand {
+    margin: 0;
+    margin-left: 0.5rem
+}
+
+#siteHeader {
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+font-family: 'Source Sans Pro', sans-serif;
+font-weight: 100;
+font-size: clamp(1.5rem,12vw, 6rem);
+color: white;
+text-align: center;
+}
+
+#spaceForHeader {
+position: relative;
+height: 80vh;
+}
+
+.navbar-burger {
+height: 10vh;
+width: 10vh;
+}
+
+.navbar-menu {
+margin: 0; padding: 0;
+}
+
+#aboutMeBox {
+    margin: 10vw;
+}
+
+.imageContainerAboutMe {
+    width: 20rem;
+}
+
+.aboutMePic {
+    width: clamp(30px, 50vw, 100%);
+}
+
+.aboutMeContent {
+    font-size: 1rem;
+}
+
+.aboutMePic {
+    display: block;
+    width: clamp(0, 80%, 400px);
+    margin: auto;
+    border-radius: 10px;
+}
+
+.tagList {
+    margin-top: 0.2rem;
+    margin-left: 0.05rem;
+    align-content: center;
+    align-items: center;
+}
+
+#socialsBox {
+    margin: 5vw;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+}
+
+#bottom {
+    height: 40px;
+}
+
+.socialsLinks {
+    margin: 2vw;
+}

@@ -16,4 +16,3 @@ Transitioning to React enables other functionality to be built into the future, 
  - Creating a dedicated projects section (This is currently hosted on Notion, as tagging and hyperlinks are easier to manage here)
  - Creating a dark mode
  - Creating animations using three js
-
