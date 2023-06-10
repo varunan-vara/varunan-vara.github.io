@@ -4,6 +4,7 @@ import Navbar from "../Components/Navbar";
 import TitleBlock from "../Components/Titleblock";
 import { DesktopAboutMeBox  } from "../Components/AboutMeBox";
 import SocialsLinks from "../Components/SocialsLinks";
+import QuickProjectPanel from "../Components/QuickProjectPanel";
 
 
 function HomePage() {
@@ -13,6 +14,7 @@ function HomePage() {
             <TitleBlock />
             <DesktopAboutMeBox />
             <SocialsLinks />
+            <QuickProjectPanel />
             <div id="bottom"></div>
         </div>
     )
