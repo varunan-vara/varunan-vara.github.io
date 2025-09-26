@@ -11,7 +11,7 @@ const AnimatingHome = () => {
       <div id="quickLinks" className="shadedBoxShadow">
         <a id="linkedInButton" className="socialsButton" href={"https://www.linkedin.com/in/varunan-varathan"}  target="_blank" rel="noopener noreferrer">My LinkedIn</a>
         <a id="githubButton" className="socialsButton" href={"https://github.com/varunan-vara"} target="_blank" rel="noopener noreferrer">My GitHub</a>
-        <a id="resumeButton" className="socialsButton" href={Pdf}>My Resume</a>
+        <a id="resumeButton" className="socialsButton" href={"https://www.notion.so/varunan-vara"}>My Notion</a>
       </div>
       <div id="curveHolder">
         <div className="custom-shape-divider-bottom-1632688346">
@@ -22,26 +22,6 @@ const AnimatingHome = () => {
             </svg>
         </div>  
       </div>
-      <div id="enggrid" >
-        <div className = "ProjectBox shadedBoxShadow">
-          <p className = "ProjectBoxTitle">Recent Project: AdventOfCode</p>
-          <p className = "ProjectBoxSubtitle" >What is Advent of Code?</p>
-          <p className = "ProjectBoxText" >Advent of Code is a yearly event that takes place during the lead up to the Christmas season. The contest, similar to a holiday advent calendar, has a different event on the 25 days of December preceding Christmas Day. Each event consists of a challenge with extremely large numbers that could only conceivably be cracked using code and algorithms. The challenges get progressively harder as the event progresses!</p>
-          <p className = "ProjectBoxText" >This year, I decided to focus more on developing my skills in some of the low level programming languages I got taught in my second year computer engineering courses, namely C and C++. I learned a lot about pointers and various array organization methods, and feel more comfortable applying the skills I learned in other real-world applications like app development and logic programming.</p>
-          <a className = "ProjectLink" href={"https://varunan-vara.notion.site/Personal-Projects-f606cbe730bf4da38bad4b0ed2559ac6"}><p className="ProjectBoxText" >Check out some of my other projects here! (Notion)</p></a>
-          <div className = "ProjectSpacer"></div>
-        </div>
-        <div className = "ProjectBox shadedBoxShadow">
-          <p className = "ProjectBoxTitle">Hackathon Projects!</p>
-          <p className = "ProjectBoxSubtitle" >UofTHacksX</p>
-          <p className = "ProjectBoxText" >UofTHacks is a student-run hackathon that takes place at UoFT's St. George Campus on a yearly basis. The 2022 season, also known as UofTHacksX, promoted the theme "Exploration", with some subthemes including Women Empowerment, Mental Health Awareness, and Fitness.</p>
-          <p className = "ProjectBoxSubtitle" >Main Project</p>
-          <p className = "ProjectBoxText" >After joinig a group of 4, our goal was to focus on the exploration and mental health awarenes. Our goal was to create a Mental Health Journalling App that prioritized feelings, emotions, and moods. After collecting data for a period of time, the app would reccomend advice, give a rundown of how the individual feels, and even provide reports that could be shown to a physician or healthcare expert.</p>
-          <a className = "ProjectLink" href={"https://github.com/varunan-vara/UofTHacksX-Ant-Hill"}><p className="ProjectBoxText" >Link to the Code Repository (GitHub)</p></a>
-          <div className = "ProjectSpacer"></div>
-        </div>
-      </div>
-      <div id="footer"></div>
     </div>
   )
 }
