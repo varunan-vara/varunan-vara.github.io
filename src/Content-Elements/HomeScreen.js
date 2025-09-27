@@ -11,7 +11,7 @@ const AnimatingHome = () => {
       <div id="quickLinks" className="shadedBoxShadow">
         <a id="linkedInButton" className="socialsButton" href={"https://www.linkedin.com/in/varunan-varathan"}  target="_blank" rel="noopener noreferrer">My LinkedIn</a>
         <a id="githubButton" className="socialsButton" href={"https://github.com/varunan-vara"} target="_blank" rel="noopener noreferrer">My GitHub</a>
-        <a id="resumeButton" className="socialsButton" href={"https://www.notion.so/varunan-vara"}>My Notion</a>
+        <a id="resumeButton" className="socialsButton" href={"https://varunan-vara.notion.site/varunan-s-engineering-portfolio?source=copy_link"}>My Notion</a>
       </div>
       <div id="curveHolder">
         <div className="custom-shape-divider-bottom-1632688346">
