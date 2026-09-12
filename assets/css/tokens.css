@@ -1,0 +1,39 @@
+/* Design tokens — colors, type, spacing custom properties.
+   Palette, type, and spacing per portfolio-design-brief.md §3, with the
+   font stack as iterated live (Open Sans Condensed / Source Sans Pro /
+   Varela Round) rather than the brief's original Jost/IBM Plex pairing. */
+:root{
+  --deep-teal:#1F3B36;
+  --signal-teal:#3E6E64;
+  --mist-teal:#8FB0A8;
+  --paper:#F1F4F2;
+  --ink:#16241F;
+  --copper:#B07A3E;
+
+  --font-display:'Open Sans Condensed', sans-serif;
+  --font-body:'Source Sans Pro', sans-serif;
+  --font-accent:'Varela Round', sans-serif;
+  --font-mono:ui-monospace, 'SF Mono', 'Cascadia Code', Menlo, Consolas, monospace;
+
+  --space-1:8px;
+  --space-2:16px;
+  --space-3:24px;
+  --space-4:32px;
+  --space-5:48px;
+  --space-6:64px;
+  --space-7:96px;
+
+  --prose:76ch;
+
+  /* How far the profile card overlaps up into the hero. The hero is made
+     this much taller than the viewport so the overlap zone sits below the
+     fold — the initial screen stays pure gradient with no card visible. */
+  --hero-overlap:170px;
+  /* A sliver of gradient left showing above the card, so it doesn't sit
+     flush against the hero edge. */
+  --card-gap:64px;
+}
+
+@media (max-width: 860px){
+  :root{ --hero-overlap:90px; --card-gap:28px; }
+}

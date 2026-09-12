@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case Study: ARMS Recommendation Engine — Varunan Varathan</title>
+<meta name="description" content="How the ARMS recommendation engine turns building-structure and occupancy data into ranked, explainable room- and space-utilization recommendations.">
+<link rel="icon" href="favicon.ico">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Case Study: ARMS Recommendation Engine">
+<meta property="og:description" content="A conventional-logic-first recommendation engine for room- and space-utilization, with an extensible plugin architecture.">
+<meta property="og:url" content="https://varunan-vara.github.io/case-study.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Case Study: ARMS Recommendation Engine">
+<meta name="twitter:description" content="A conventional-logic-first recommendation engine for room- and space-utilization, with an extensible plugin architecture.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&family=Source+Sans+Pro:wght@200;300;400&family=Varela+Round&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="case-study">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="page-header">
+  <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Menu"></button>
+  <ul class="nav-menu" id="navMenu" aria-label="Primary">
+    <li><a href="index.html" data-nav="home">Home</a></li>
+    <li><a href="experience.html" data-nav="experience">Experience</a></li>
+    <li><a href="projects.html" data-nav="projects">Projects</a></li>
+    <li><a href="skills.html" data-nav="skills">Skills</a></li>
+    <li><a href="education.html" data-nav="education">Education</a></li>
+    <li><a class="cta" href="mailto:varatv3@mcmaster.ca">Contact</a></li>
+  </ul>
+  <div class="page-header-inner">
+    <p class="page-header-eyebrow">Case Study</p>
+    <h1>ARMS Recommendation Engine</h1>
+    <p>A room- and space-utilization recommendation engine for hospitals and corporate offices, built at H.H. Angus &amp; Associates. Conventional-logic-first by design, with an extensible plugin architecture underneath.</p>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="content tight">
+    <div class="case-study-intro">
+      <div class="case-study-intro-text">
+        <div class="section-head">
+          <h2>What it does</h2>
+          <p>The engine ingests building structures in the form of a standardized ontology, occupancy data and booking data to generate recommendations that are ranked using scores and confidence metrics. Examples include:</p>
+          <ul>
+            <li>"This room is underused, reallocate or consolidate."</li>
+            <li>"This zone is over capacity at certain hours, reduce HVAC/maintenance costs by rescheduling."</li>
+            <li>"This room type is systematically underbooked, investigate why."</li>
+          </ul>
+          <p>Each recommendation carries a <code>subject_key</code>, a target-scoped identity that attaches feedback and later runs back to the same underlying finding across re-runs, rather than treating every run as a clean slate.</p>
+          <p>Personas were integrated into the engine such that the program creates recommendations based on the type of site/building and the type of person inspecting the recommendations. A <strong>healthcare</strong> persona would be recommended ways to optimize clinic usage by observing booked clinic space that goes unused, whereas <strong>office building managers</strong> would receive recommendations on underused office spaces and underperforming meeting rooms based on available amenities.</p>
+        </div>
+
+        <div class="section-head">
+          <h2>Design philosophy</h2>
+          <p>To optimize the project for extensibility and a business-logic-first approach, the application was prototyped using three different models: LLMs, traditional TensorFlow-based ML, and a basic statistical model. A statistical model was arrived at, with the ability to extend functionality using TensorFlow and LLMs built in.</p>
+          <p>Each recommendation type links to a candidate builder, which in its current form runs a statistical model to generate relevant features and metrics for the recommendation. TensorFlow is used for trend prediction and pattern recognition as needed, while still falling back on the statistical model to parse business logic and policies.</p>
+        </div>
+      </div>
+
+      <div class="case-study-diagram">
+        <svg viewBox="0 0 460 660" class="pipeline-diagram" role="img" aria-label="Pipeline diagram: inputs flow through a feature layer, candidate generation, and policy and ranking, to produce ranked recommendations. A separately scheduled metric layer branches off the feature layer and feeds historical context back into candidate generation.">
+          <defs>
+            <marker id="csArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" class="pipeline-arrowhead"/>
+            </marker>
+            <marker id="csArrowBranch" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" class="pipeline-branch-arrowhead"/>
+            </marker>
+          </defs>
+
+          <rect x="20" y="16" width="400" height="80" rx="10" class="pipeline-box pipeline-box-input"/>
+          <text x="40" y="46" class="pipeline-title">Inputs</text>
+          <text x="40" y="68" class="pipeline-sub">Ontology · occupancy data · booking data</text>
+
+          <line x1="140" y1="96" x2="140" y2="140" class="pipeline-edge" marker-end="url(#csArrow)"/>
+
+          <rect x="20" y="146" width="260" height="80" rx="10" class="pipeline-box pipeline-box-feature"/>
+          <text x="40" y="176" class="pipeline-title">Feature Layer</text>
+          <text x="40" y="198" class="pipeline-sub">Computes per-space signals from inputs</text>
+
+          <!-- Metric layer branch: computed on its own schedule off the feature layer, feeds candidate generation -->
+          <rect x="300" y="231" width="120" height="60" rx="10" class="pipeline-box pipeline-box-metric"/>
+          <text x="360" y="256" text-anchor="middle" class="pipeline-title pipeline-title-small">Metric Layer</text>
+          <text x="360" y="276" text-anchor="middle" class="pipeline-sub pipeline-sub-small">Own schedule</text>
+
+          <path d="M 280 186 L 360 186 L 360 229" class="pipeline-branch-edge" marker-end="url(#csArrowBranch)"/>
+          <path d="M 360 293 L 360 316 L 280 316" class="pipeline-branch-edge" marker-end="url(#csArrowBranch)"/>
+
+          <line x1="140" y1="226" x2="140" y2="270" class="pipeline-edge" marker-end="url(#csArrow)"/>
+
+          <rect x="20" y="276" width="260" height="80" rx="10" class="pipeline-box pipeline-box-candidate"/>
+          <text x="40" y="306" class="pipeline-title">Candidate Generation</text>
+          <text x="40" y="328" class="pipeline-sub">Independent, confidence-scored checks</text>
+
+          <line x1="140" y1="356" x2="140" y2="400" class="pipeline-edge" marker-end="url(#csArrow)"/>
+
+          <rect x="20" y="406" width="400" height="80" rx="10" class="pipeline-box pipeline-box-policy"/>
+          <text x="40" y="436" class="pipeline-title">Policy &amp; Ranking</text>
+          <text x="40" y="458" class="pipeline-sub">Veto-based filter chain, then top-N scoring</text>
+
+          <line x1="140" y1="486" x2="140" y2="530" class="pipeline-edge" marker-end="url(#csArrow)"/>
+
+          <rect x="20" y="536" width="400" height="96" rx="10" class="pipeline-box pipeline-box-output"/>
+          <text x="40" y="570" class="pipeline-title pipeline-title-output">Ranked Recommendations</text>
+          <text x="40" y="594" class="pipeline-sub pipeline-sub-output">Explainable, scored, and confidence-rated</text>
+        </svg>
+        <p class="diagram-caption">Simplified pipeline, including the parallel metric layer — see the Architecture tab below for the full breakdown.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content tight">
+    <div data-tabs>
+      <div class="tabs" role="tablist" aria-label="Case study sections">
+        <button class="tab-trigger" role="tab" aria-selected="true" aria-controls="panel-architecture" data-tab-target="panel-architecture" id="tab-architecture">Architecture</button>
+        <button class="tab-trigger" role="tab" aria-selected="false" aria-controls="panel-api" data-tab-target="panel-api" id="tab-api">API &amp; Tooling</button>
+        <button class="tab-trigger" role="tab" aria-selected="false" aria-controls="panel-testing" data-tab-target="panel-testing" id="tab-testing">Testing</button>
+        <button class="tab-trigger" role="tab" aria-selected="false" aria-controls="panel-deployment" data-tab-target="panel-deployment" id="tab-deployment">Deployment</button>
+      </div>
+
+      <div class="tab-panel" id="panel-architecture" role="tabpanel" aria-labelledby="tab-architecture">
+        <div class="info-node accent-mist">
+          <span class="stage-label">Data model</span>
+          <h3>Ontology</h3>
+          <p>Organization → Site → Floor → Zone → Room → Sensor, with per-room metadata (features, tags, activities, bookings) and time-series occupancy data.</p>
+        </div>
+
+        <div class="info-node">
+          <span class="stage-label">Stages 1–4 + scheduled side-channel</span>
+          <h3>Pipeline</h3>
+          <p>Feature layer → candidate generation → policy &amp; ranking. A metric layer computes historical trends on its own schedule and feeds candidate generation.</p>
+          <ul>
+            <li><strong>Plugins:</strong> features, candidate builders, and policies auto-register — just drop in a new class.</li>
+            <li><strong>Candidate builders:</strong> one opportunity check each, with a score and confidence rating.</li>
+            <li><strong>Policies:</strong> a veto chain — every policy must agree to keep a recommendation.</li>
+            <li><strong>Ranking:</strong> dedupes and caps recommendations per zone with one shared scoring formula.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panel-api" role="tabpanel" aria-labelledby="tab-api" hidden>
+        <div class="info-node accent-copper">
+          <span class="stage-label">Concurrency</span>
+          <h3>Run model</h3>
+          <p>An API layer admits runs; a worker process claims and executes them. Atomic DB admission keeps this correct under concurrency, and crashed runs recover automatically.</p>
+        </div>
+
+        <div class="info-node accent-teal">
+          <span class="stage-label">Public interface</span>
+          <h3>REST surface</h3>
+          <p>A versioned API to trigger runs, fetch recommendations, submit feedback, and manage settings — every setting resolves through one clear precedence chain.</p>
+        </div>
+
+        <div class="info-node">
+          <span class="stage-label">Internal consoles</span>
+          <h3>Dev tooling</h3>
+          <p>Four internal consoles: an API tester, a read-only DB viewer, a config admin panel, and a client-facing settings preview.</p>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panel-testing" role="tabpanel" aria-labelledby="tab-testing" hidden>
+        <div class="info-node accent-copper">
+          <span class="stage-label">Coverage</span>
+          <h3>Test suite</h3>
+          <p>~900 pytest unit and integration tests, plus an opt-in real-data pass. One script drives both the pre-push hook and CI, and a Docker Compose smoke test catches what unit tests miss.</p>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panel-deployment" role="tabpanel" aria-labelledby="tab-deployment" hidden>
+        <div class="info-node accent-teal">
+          <span class="stage-label">Runtime</span>
+          <h3>Current direction</h3>
+          <p>Two AWS Lambda functions sharing one container image, orchestrated by Step Functions and EventBridge — no persistent server.</p>
+        </div>
+
+        <div class="info-node accent-mist">
+          <span class="stage-label">Storage</span>
+          <h3>Storage &amp; ingestion</h3>
+          <p>SQLite today behind a swappable storage interface, with a PostgreSQL/RDS backend in progress. Ingests CSV and JSON sources, with Athena support planned.</p>
+        </div>
+
+        <div class="info-node accent-copper">
+          <span class="stage-label">Roadmap</span>
+          <h3>What's next</h3>
+          <p>More recommendation types, richer features, and an LLM/chatbot front end that calls the engine as a tool rather than replacing it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+<nav class="dock-wrap" aria-label="Quick links">
+  <div class="dock" data-dock>
+    <a class="dock-item" href="index.html" aria-label="Home">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg>
+      <span class="dock-tooltip">Home</span>
+    </a>
+    <span class="dock-sep" aria-hidden="true"></span>
+    <a class="dock-item" href="mailto:varatv3@mcmaster.ca" aria-label="Email">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+      <span class="dock-tooltip">Email</span>
+    </a>
+    <a class="dock-item" href="https://www.linkedin.com/in/varunan-varathan" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg class="icon-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+      <span class="dock-tooltip">LinkedIn</span>
+    </a>
+    <a class="dock-item" href="https://github.com/varunan-vara" target="_blank" rel="noopener" aria-label="GitHub">
+      <svg class="icon-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.98 5.24.98 11.52c0 4.84 3.14 8.94 7.49 10.39.55.1.75-.24.75-.53 0-.26-.01-1.13-.02-2.04-3.05.66-3.7-1.3-3.7-1.3-.5-1.27-1.22-1.6-1.22-1.6-.99-.68.08-.67.08-.67 1.1.08 1.68 1.13 1.68 1.13.98 1.68 2.57 1.2 3.2.92.1-.71.38-1.2.7-1.48-2.44-.28-5-1.22-5-5.43 0-1.2.43-2.18 1.13-2.95-.11-.28-.49-1.4.11-2.92 0 0 .92-.3 3.02 1.13a10.5 10.5 0 0 1 5.5 0c2.1-1.43 3.02-1.13 3.02-1.13.6 1.52.22 2.64.11 2.92.7.77 1.13 1.75 1.13 2.95 0 4.22-2.57 5.15-5.02 5.42.39.34.74 1.02.74 2.06 0 1.49-.01 2.68-.01 3.05 0 .29.2.64.76.53A10.53 10.53 0 0 0 23.02 11.5C23.02 5.24 18.27.5 12 .5Z"/></svg>
+      <span class="dock-tooltip">GitHub</span>
+    </a>
+    <a class="dock-item" href="https://varunan-vara.notion.site/varunan-s-engineering-portfolio?source=copy_link" target="_blank" rel="noopener" aria-label="Notion">
+      <svg class="icon-fill" viewBox="0 0 100 100" aria-hidden="true"><path d="M6.017 4.313l55.333 -4.087c6.797 -0.583 8.543 -0.19 12.817 2.917l17.663 12.443c2.913 2.14 3.883 2.723 3.883 5.053v68.243c0 4.277 -1.553 6.807 -6.99 7.193L24.467 99.967c-4.08 0.193 -6.023 -0.39 -8.16 -3.113L3.3 79.94c-2.333 -3.113 -3.3 -5.443 -3.3 -8.167V11.113c0 -3.497 1.553 -6.413 6.017 -6.8z" fill="none"/><path fill-rule="evenodd" clip-rule="evenodd" d="M61.35 0.227l-55.333 4.087C1.553 4.7 0 7.617 0 11.113v60.66c0 2.723 0.967 5.053 3.3 8.167l13.007 16.913c2.137 2.723 4.08 3.307 8.16 3.113l64.257 -3.89c5.433 -0.387 6.99 -2.917 6.99 -7.193V20.64c0 -2.21 -0.873 -2.847 -3.443 -4.733L74.167 3.143c-4.273 -3.107 -6.02 -3.5 -12.817 -2.917zM25.92 19.523c-5.247 0.353 -6.437 0.433 -9.417 -1.99L8.927 11.507c-0.77 -0.78 -0.383 -1.753 1.557 -1.947l53.193 -3.887c4.467 -0.39 6.793 1.167 8.54 2.527l9.123 6.61c0.39 0.197 1.36 1.36 0.193 1.36l-54.933 3.307 -0.68 0.047zM19.803 88.3V30.367c0 -2.53 0.777 -3.697 3.103 -3.893L86 22.78c2.14 -0.193 3.107 1.167 3.107 3.693v57.547c0 2.53 -0.39 4.67 -3.883 4.863l-60.377 3.5c-3.493 0.193 -5.043 -0.97 -5.043 -4.083zm59.6 -54.827c0.387 1.75 0 3.5 -1.75 3.7l-2.91 0.577v42.773c-2.527 1.36 -4.853 2.137 -6.797 2.137 -3.107 0 -3.883 -0.973 -6.21 -3.887l-19.03 -29.94v28.967l6.02 1.363s0 3.5 -4.857 3.5l-13.39 0.777c-0.39 -0.78 0 -2.723 1.357 -3.11l3.497 -0.97v-38.3L30.48 40.667c-0.39 -1.75 0.58 -4.277 3.3 -4.473l14.367 -0.967 19.8 30.327v-26.83l-5.047 -0.58c-0.39 -2.143 1.163 -3.7 3.103 -3.89l13.4 -0.78z" fill="#fff"/></svg>
+      <span class="dock-tooltip">Notion</span>
+    </a>
+    <a class="dock-item" href="assets/pdf/Resume_-_Varunan_Varathan.pdf" target="_blank" rel="noopener" aria-label="Resume">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+      <span class="dock-tooltip">Resume</span>
+    </a>
+  </div>
+</nav>
+
+<dialog class="contact-dialog" id="contactDialog" aria-labelledby="contactDialogTitle">
+  <div class="contact-dialog-inner">
+    <button class="contact-dialog-close" id="contactDialogClose" aria-label="Close">&times;</button>
+    <h2 id="contactDialogTitle">Get in touch</h2>
+    <p>Open to conversations about co-op and full-time opportunities.</p>
+    <div class="contact-dialog-list">
+      <a href="mailto:varatv3@mcmaster.ca"><span class="contact-dialog-label">Email</span> varatv3@mcmaster.ca</a>
+      <a href="https://www.linkedin.com/in/varunan-varathan" target="_blank" rel="noopener"><span class="contact-dialog-label">LinkedIn</span> linkedin.com/in/varunan-varathan</a>
+      <a href="https://github.com/varunan-vara" target="_blank" rel="noopener"><span class="contact-dialog-label">GitHub</span> github.com/varunan-vara</a>
+      <a href="https://varunan-vara.notion.site/varunan-s-engineering-portfolio?source=copy_link" target="_blank" rel="noopener"><span class="contact-dialog-label">Notion</span> Full portfolio</a>
+      <a href="assets/pdf/Resume_-_Varunan_Varathan.pdf" target="_blank" rel="noopener"><span class="contact-dialog-label">Resume</span> Download PDF</a>
+    </div>
+  </div>
+</dialog>
+
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/interactive.js"></script><script src="assets/js/dock.js"></script>
+</body>
+</html>
